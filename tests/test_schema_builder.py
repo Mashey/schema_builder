@@ -15,3 +15,5 @@ def test_schema_type():
     assert schema_type([]) == 'array'
 
     assert schema_type("hello") == 'string'
+
+    assert schema_type(None) == 'null'
