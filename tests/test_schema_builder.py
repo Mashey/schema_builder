@@ -27,3 +27,31 @@ def create_json_instance_test_inputs():
 @pytest.mark.parametrize("key,value,expected", create_json_instance_test_inputs())
 def test_create_json_instance(key, value, expected):
     assert create_json_instance(key, value) == expected
+
+def create_json_definition_test_inputs():
+    return [
+        (
+            "location",
+            {"address": "123 Main St", "city": "Boulder", "state": "CO"},
+            {
+                "location": {
+                    "type": ["null", "object"],
+                    "properties": {
+                        "address": {
+                            "type": 'string'
+                        },
+                        "city": {
+                            "type": 'string'
+                        },
+                        "state": {
+                            "type": 'string'
+                        }
+                    }
+                }
+            }
+        )
+    ]
+
+@pytest.mark.parametrize("def_name,properties,expected", create_json_definition_test_inputs())
+def test_create_json_definition(def_name, properties, expected):
+    assert create_json_definition(def_name, properties) == expected
