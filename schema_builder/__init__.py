@@ -1,11 +1,20 @@
-def schema_type(value):
+TYPES = {
+    int: 'number',
+    float: 'number',
+    bool: 'boolean',
+    dict: 'object',
+    list: 'array',
+    str: 'string'
+}
+
+def to_json_type(input_type):
+    print(input_type)
+    return TYPES.get(input_type, 'null')
+
+def create_json_instance(key, value):
+    instance = {}
     value_type = type(value)
-    types = {
-        int: 'number',
-        float: 'number',
-        bool: 'boolean',
-        dict: 'object',
-        list: 'array',
-        str: 'string'
+    instance[key] = {
+        "type": to_json_type(value_type)
     }
-    return types.get(value_type, 'null')
+    return instance

@@ -1,19 +1,29 @@
+import pytest
+
 from schema_builder import *
 
-def test_schema_type():
-    assert schema_type(10) == "number"
-    assert schema_type(10.5) == "number"
+def to_json_type_test_inputs():
+    return [
+        (int, 'number'),
+        (float, 'number'),
+        (dict, 'object'),
+        (list, 'array'),
+        (str, 'string'),
+        (None, 'null')
+    ]
 
-    assert schema_type(True) == 'boolean'
-    assert schema_type(False) == 'boolean'
+@pytest.mark.parametrize("input_type,expected", to_json_type_test_inputs())
+def test_to_json_type(input_type, expected):
+    assert to_json_type(input_type) == expected
 
-    assert schema_type({ "hello": "world" }) == 'object'
-    assert schema_type({}) == 'object'
+def create_json_instance_test_inputs():
+    return [
+        ("id", 10, {"id": {"type": "number"}}),
+        ("amount", 10.5, {"amount": {"type": "number"}}),
+        ("is_active", True, {"is_active": {"type": "boolean"}}),
+        ("name", "Bob", {"name": {"type": "string"}})
+    ]
 
-    assert schema_type(["hola", "mundo"]) == 'array'
-    assert schema_type([1, 2, 3]) == 'array'
-    assert schema_type([]) == 'array'
-
-    assert schema_type("hello") == 'string'
-
-    assert schema_type(None) == 'null'
+@pytest.mark.parametrize("key,value,expected", create_json_instance_test_inputs())
+def test_create_json_instance(key, value, expected):
+    assert create_json_instance(key, value) == expected
