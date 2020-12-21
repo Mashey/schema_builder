@@ -4,12 +4,11 @@ from schema_builder import *
 
 def to_json_type_test_inputs():
     return [
-        (int, 'number'),
-        (float, 'number'),
-        (dict, 'object'),
-        (list, 'array'),
-        (str, 'string'),
-        (None, 'null')
+        (int, ['null', 'number']),
+        (float, ['null', 'number']),
+        (dict, ['null', 'object']),
+        (list, ['null', 'array']),
+        (str, ['null', 'string'])
     ]
 
 @pytest.mark.parametrize("input_type,expected", to_json_type_test_inputs())
@@ -18,10 +17,10 @@ def test_to_json_type(input_type, expected):
 
 def create_json_instance_test_inputs():
     return [
-        ("id", 10, {"id": {"type": "number"}}),
-        ("amount", 10.5, {"amount": {"type": "number"}}),
-        ("is_active", True, {"is_active": {"type": "boolean"}}),
-        ("name", "Bob", {"name": {"type": "string"}})
+        ("id", 10, {"id": {"type": ["null", "number"]}}),
+        ("amount", 10.5, {"amount": {"type": ["null", "number"]}}),
+        ("is_active", True, {"is_active": {"type": ["null", "boolean"]}}),
+        ("name", "Bob", {"name": {"type": ["null", "string"]}})
     ]
 
 @pytest.mark.parametrize("key,value,expected", create_json_instance_test_inputs())
@@ -38,13 +37,13 @@ def create_json_definition_test_inputs():
                     "type": ["null", "object"],
                     "properties": {
                         "address": {
-                            "type": 'string'
+                            "type": ['null', 'string']
                         },
                         "city": {
-                            "type": 'string'
+                            "type": ['null', 'string']
                         },
                         "state": {
-                            "type": 'string'
+                            "type": ['null', 'string']
                         }
                     }
                 }

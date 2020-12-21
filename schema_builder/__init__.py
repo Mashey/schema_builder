@@ -1,16 +1,16 @@
 from pprint import pprint
 
 TYPES = {
-    int: 'number',
-    float: 'number',
-    bool: 'boolean',
-    dict: 'object',
-    list: 'array',
-    str: 'string'
+    int: ['null', 'number'],
+    float: ['null', 'number'],
+    bool: ['null', 'boolean'],
+    dict: ['null', 'object'],
+    list: ['null', 'array'],
+    str: ['null', 'string']
 }
 
 def to_json_type(input_type):
-    return TYPES.get(input_type, 'null')
+    return TYPES.get(input_type, ['null'])
 
 def create_json_instance(key, value):
     instance = {}
