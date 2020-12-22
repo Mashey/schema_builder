@@ -18,8 +18,9 @@ def parse_table_data():
     table_name, clean_table_data = clean_data(raw_table_data)
     table_dict = create_table_dict(clean_table_data)
     json_schema_dict = create_json_schema_dict(table_dict)
+    json_schema_file = create_json_schema_file(table_name, json_schema_dict)
 
-    return json_schema_dict
+    return json_schema_file
 
 
 def clean_data(data):
@@ -86,6 +87,15 @@ def create_json_schema_dict(data):
     }
 
     return json_schema
+
+
+def create_json_schema_file(table_name, data):
+    json_schema = json.dumps(data, indent=4)
+
+    with open(f"./schema_builder/schemas/{table_name}_schema.json", "w") as schema:
+        schema.write(json_schema)
+
+    return f"{table_name}_schema.json successfully created."
 
 
 my_table = parse_table_data()
