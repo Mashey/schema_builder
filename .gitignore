@@ -7,3 +7,4 @@ tests/cassettes
 *.DS_Store
 schema_builder.egg-info
 source_ddl_files
+schemas
