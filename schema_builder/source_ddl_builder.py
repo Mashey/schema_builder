@@ -17,8 +17,9 @@ def parse_table_data():
     raw_table_data = open_ddl_file()
     table_name, clean_table_data = clean_data(raw_table_data)
     table_dict = create_table_dict(clean_table_data)
+    json_schema_dict = create_json_schema_dict(table_dict)
 
-    return table_dict
+    return json_schema_dict
 
 
 def clean_data(data):
@@ -76,6 +77,15 @@ def find_data_type(data):
         return {"type": ["string", "null"]}
     elif 'TIMESTAMP' in data:
         return {"type": ["string", "null"]}
+
+
+def create_json_schema_dict(data):
+    json_schema = {
+        "type": ["object", "null"],
+        "properties": data
+    }
+
+    return json_schema
 
 
 my_table = parse_table_data()
