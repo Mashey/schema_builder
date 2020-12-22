@@ -6,4 +6,4 @@ tests/cassettes
 .coverage
 *.DS_Store
 schema_builder.egg-info
-
+source_ddl_files
