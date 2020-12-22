@@ -2,55 +2,81 @@ import pytest
 
 from schema_builder import *
 
-def to_json_type_test_inputs():
-    return [
-        (int, ['null', 'number']),
-        (float, ['null', 'number']),
-        (dict, ['null', 'object']),
-        (list, ['null', 'array']),
-        (str, ['null', 'string'])
-    ]
+def test_create_integer_property():
+    assert create_integer_property() == { "type": ['null', 'integer'] }
 
-@pytest.mark.parametrize("input_type,expected", to_json_type_test_inputs())
-def test_to_json_type(input_type, expected):
-    assert to_json_type(input_type) == expected
+def test_create_number_property():
+    assert create_number_property() == { "type": ['null', 'number'] }
 
-def create_json_instance_test_inputs():
-    return [
-        ("id", 10, {"id": {"type": ["null", "number"]}}),
-        ("amount", 10.5, {"amount": {"type": ["null", "number"]}}),
-        ("is_active", True, {"is_active": {"type": ["null", "boolean"]}}),
-        ("name", "Bob", {"name": {"type": ["null", "string"]}})
-    ]
+def test_create_boolean_property():
+    assert create_boolean_property() == { "type": ['null', 'boolean'] }
 
-@pytest.mark.parametrize("key,value,expected", create_json_instance_test_inputs())
-def test_create_json_instance(key, value, expected):
-    assert create_json_instance(key, value) == expected
+def test_create_string_property():
+    assert create_string_property() == { "type": ['null', 'string'] }
 
-def create_json_definition_test_inputs():
+def test_create_none_property():
+    assert create_none_property() == { "type": ['null'] }
+
+def create_object_property_test_inputs():
     return [
         (
-            "location",
-            {"address": "123 Main St", "city": "Boulder", "state": "CO"},
+            {"name": "Bob", "age": 100},
             {
-                "location": {
+                "type": ["null", "object"],
+                "properties": {
+                    "name": {"type": ['null', 'string']},
+                    "age": {"type": ['null', 'integer']}
+                }
+            }
+        ),
+        (
+            {"address": {"street": "123 Main", "state": "CO"}},
+            {
+                "type": ["null", "object"],
+                "properties": {
+                    "address": {
+                        "type": ["null", "object"],
+                        "properties": {
+                            "street": {"type": ['null', 'string']},
+                            "state": {"type": ['null', 'string']}
+                        }
+                    } 
+                }
+            }
+        )
+    ]
+
+@pytest.mark.parametrize("obj,expected", create_object_property_test_inputs())
+def test_create_object_property(obj, expected):
+    assert create_object_property(obj) == expected
+
+def create_array_property_test_inputs():
+    return [
+        (
+            [1.0, 2.0],
+            {
+                "type": ["null", "array"],
+                "items": {
+                    "type": ["null", "number"],
+                }
+            }
+        ),
+        (
+            [{"name": "Spot", "type": "Dog"}, {"name": "Kitty", "type": "Cat"}],
+            {
+                "type": ["null", "array"],
+                "items": {
                     "type": ["null", "object"],
                     "properties": {
-                        "address": {
-                            "type": ['null', 'string']
-                        },
-                        "city": {
-                            "type": ['null', 'string']
-                        },
-                        "state": {
-                            "type": ['null', 'string']
-                        }
+                        "name": {"type": ['null', 'string']},
+                        "type": {"type": ['null', 'string']}
                     }
                 }
             }
         )
     ]
 
-@pytest.mark.parametrize("def_name,properties,expected", create_json_definition_test_inputs())
-def test_create_json_definition(def_name, properties, expected):
-    assert create_json_definition(def_name, properties) == expected
+@pytest.mark.parametrize("items,expected", create_array_property_test_inputs())
+def test_create_array_property(items, expected):
+    assert create_array_property(items) == expected
+    
