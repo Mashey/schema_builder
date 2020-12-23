@@ -8,3 +8,4 @@ tests/cassettes
 schema_builder.egg-info
 source_ddl_files
 schemas
+db_tables.txt
