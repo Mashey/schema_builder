@@ -7,14 +7,14 @@ pp = pprint.PrettyPrinter(indent=4, depth=3)
 
 
 def open_ddl_file(file=None):
-    with open('./schema_builder/source_ddl_files/activity_table_ddl.txt') as table:
+    with open(f"./schema_builder/source_ddl_files/{file}") as table:
         table_data = table.readlines()
 
         return table_data
 
 
-def parse_table_data():
-    raw_table_data = open_ddl_file()
+def parse_table_data(file=None):
+    raw_table_data = open_ddl_file(file)
     table_name, clean_table_data = clean_data(raw_table_data)
     table_dict = create_table_dict(clean_table_data)
     json_schema_dict = create_json_schema_dict(table_dict)
@@ -98,4 +98,4 @@ def create_json_schema_file(table_name, data):
     return f"{table_name}_schema.json successfully created."
 
 
-my_table = parse_table_data()
+my_table = parse_table_data("activity_table_ddl.txt")
