@@ -13,7 +13,7 @@ def open_ddl_file(file=None):
         return table_data
 
 
-def parse_table_data(file=None):
+def build_json_schema(file=None):
     raw_table_data = open_ddl_file(file)
     table_name, clean_table_data = clean_data(raw_table_data)
     table_dict = create_table_dict(clean_table_data)
@@ -98,4 +98,4 @@ def create_json_schema_file(table_name, data):
     return f"{table_name}_schema.json successfully created."
 
 
-my_table = parse_table_data("activity_table_ddl.txt")
+my_table = build_json_schema("activity_table_ddl.txt")
