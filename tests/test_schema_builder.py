@@ -1,5 +1,5 @@
 from schema_builder import __version__
-from source_ddl_builder import *
+from schema_builder.source_ddl_builder import *
 import pytest
 
 
