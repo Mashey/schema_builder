@@ -78,7 +78,7 @@ def schema_from_ddl(file):
 
 def schema_from_table(data):
     if data == None:
-        return "Please provide data from DESCRIBE FORMATTED."
+        return "Please provide data from a SQL DESCRIBE FORMATTED query."
 
     table_name = data[0]
     clean_table_data = parse_formatted_table(data)
