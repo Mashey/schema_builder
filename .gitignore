@@ -9,3 +9,4 @@ schema_builder.egg-info
 source_ddl_files
 schemas
 db_tables.txt
+data_sources/
