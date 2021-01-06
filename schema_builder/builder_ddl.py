@@ -12,14 +12,14 @@ def open_ddl_file(file):
 
 
 def clean_data(data):
-    step1 = remove_unncessary_items(data)
+    step1 = remove_unnecessary_items(data)
     step2 = remove_new_lines(step1)
     table_name, table_schema = set_schema_name(step2)
 
     return table_name, table_schema
 
 
-def remove_unncessary_items(data):
+def remove_unnecessary_items(data):
     clean_data = data[4:-1]
 
     return clean_data
