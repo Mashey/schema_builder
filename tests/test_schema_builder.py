@@ -1,5 +1,5 @@
 from schema_builder import __version__
-from schema_builder.source_ddl_builder import *
+from schema_builder import build_json_schema
 import pytest
 
 
