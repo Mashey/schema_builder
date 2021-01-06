@@ -27,10 +27,10 @@ def test_open_ddl_file():
     assert ');\n' in table_data[-1]
 
 
-def test_remove_unncessary_items():
+def test_remove_unnecessary_items():
     table_data = open_ddl_file('activity_table_ddl.txt')
 
-    clean_data = remove_unncessary_items(table_data)
+    clean_data = remove_unnecessary_items(table_data)
 
     assert 'CREATE TABLE Hive.brightview_prod.activity (\n' in clean_data[0]
     assert '\tactivity_id BIGINT,\n' in clean_data[1]
@@ -41,7 +41,7 @@ def test_remove_unncessary_items():
 
 def test_remove_new_lines():
     table_data = open_ddl_file('activity_table_ddl.txt')
-    clean_data1 = remove_unncessary_items(table_data)
+    clean_data1 = remove_unnecessary_items(table_data)
     clean_data2 = remove_new_lines(clean_data1)
 
     assert 'CREATE TABLE Hive.brightview_prod.activity' in clean_data2[0]
@@ -57,7 +57,7 @@ def test_remove_new_lines():
 
 def test_set_schema_name():
     table_data = open_ddl_file('activity_table_ddl.txt')
-    clean_data1 = remove_unncessary_items(table_data)
+    clean_data1 = remove_unnecessary_items(table_data)
     clean_data2 = remove_new_lines(clean_data1)
 
     clean_data3 = set_schema_name(clean_data2)
