@@ -1,9 +1,3 @@
-import pprint
-import json
-from datetime import date, datetime, timezone, timedelta
-from collections import defaultdict
-
-
 def open_ddl_file(file):
     with open(f"./schema_builder/data_sources/ddl_files/{file}") as table:
         table_data = table.readlines()
