@@ -2,7 +2,7 @@ import json
 from schema_builder.builder_ddl import open_ddl_file, clean_data
 from schema_builder.builder_table_list import parse_formatted_table
 
-__version__ = '0.1.0'
+__version__ = '0.2.0'
 
 
 def build_json_schema(source_type, file=None, data=None, table_name=None):
