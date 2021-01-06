@@ -6,5 +6,5 @@ import pytest
 import pytest_cov
 
 
-def test_one():
-  pass
+def test_version():
+  assert __version__ == '0.2.0'
