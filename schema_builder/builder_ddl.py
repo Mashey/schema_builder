@@ -8,7 +8,7 @@ from schema_builder import create_table_dict, create_json_schema_dict, create_js
 pp = pprint.PrettyPrinter(indent=4, depth=3)
 
 
-def build_json_schema(file=None):
+def build_json_schema(file):
     raw_table_data = open_ddl_file(file)
     table_name, clean_table_data = clean_data(raw_table_data)
     table_dict = create_table_dict(clean_table_data)
@@ -18,8 +18,8 @@ def build_json_schema(file=None):
     return json_schema_file
 
 
-def open_ddl_file(file=None):
-    with open(f"./schema_builder/source_ddl_files/{file}") as table:
+def open_ddl_file(file):
+    with open(f"./schema_builder/data_sources/ddl_files/{file}") as table:
         table_data = table.readlines()
 
         return table_data
