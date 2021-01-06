@@ -1,13 +1,6 @@
-from schema_builder import __version__
-from schema_builder import *
 from schema_builder.builder_ddl import *
-from schema_builder.builder_table_list import *
 import pytest
 import pytest_cov
-
-
-def test_version():
-    assert __version__ == '0.1.0'
 
 
 def test_open_ddl_file():
@@ -70,4 +63,18 @@ def test_set_schema_name():
     assert clean_data3[1][3] == ['begin_date', 'TIMESTAMP']
     assert clean_data3[1][4] == ['end_date', 'TIMESTAMP']
     assert clean_data3[1][5] == ['activity_type', 'VARCHAR(1)']
+
+
+def test_clean_data():
+    table_data = open_ddl_file('activity_table_ddl.txt')
+    cleaned_data = clean_data(table_data)
+
+    assert cleaned_data[0] == 'activity'
+    assert isinstance(cleaned_data[1], list)
+    assert cleaned_data[1][0] == ['activity_id', 'BIGINT']
+    assert cleaned_data[1][1] == ['code', 'VARCHAR(10)']
+    assert cleaned_data[1][2] == ['description', 'VARCHAR(60)']
+    assert cleaned_data[1][3] == ['begin_date', 'TIMESTAMP']
+    assert cleaned_data[1][4] == ['end_date', 'TIMESTAMP']
+    assert cleaned_data[1][5] == ['activity_type', 'VARCHAR(1)']
 
