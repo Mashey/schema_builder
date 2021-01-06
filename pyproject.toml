@@ -6,7 +6,6 @@ authors = ["Michael Cooper <macoop2363@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-pep8 = "^1.7.1"
 pylint = "^2.6.0"
 autopep8 = "^1.5.4"
 pytest-cov = "^2.10.1"
