@@ -5,13 +5,13 @@ from schema_builder.builder_table_list import parse_formatted_table
 __version__ = '0.1.0'
 
 
-def build_json_schema(source_type, file=None, data=None):
+def build_json_schema(source_type, file=None, data=None, table=None):
     if source_type == 'ddl':
         return schema_from_ddl(file)
     elif source_type == 'table':
-        return schema_from_table(data)
+        return schema_from_table(data, table)
     else:
-        return "Please enter a valid source type. [ddl, table]"
+        return "Please enter a valid source type [ddl, table]."
 
 
 def create_table_dict(data):
@@ -76,14 +76,13 @@ def schema_from_ddl(file):
     return create_json_schema_file(json_schema_dict, table_name)
 
 
-def schema_from_table(data):
+def schema_from_table(data, table):
     if data == None:
         return "Please provide data from a SQL DESCRIBE FORMATTED query."
 
-    table_name = data[0]
     clean_table_data = parse_formatted_table(data)
     table_dict = create_table_dict(clean_table_data)
     json_schema_dict = create_json_schema_dict(table_dict)
 
-    return create_json_schema_file(json_schema_dict, table_name)
+    return create_json_schema_file(json_schema_dict, table)
 
