@@ -30,7 +30,7 @@ def schema_from_table(data, table_name):
     if data == None:
         return "Please provide data from a SQL DESCRIBE FORMATTED query."
 
-    clean_table_data = parse_formatted_table(data)
+    clean_table_data = parse_formatted_table(data, table_name)
     table_dict = create_table_dict(clean_table_data)
     json_schema_dict = create_json_schema_dict(table_dict)
 
@@ -48,24 +48,17 @@ def create_table_dict(data):
 
 
 def find_data_type(data):
-    # Idea :: use data_types in place of an if/elif chain to return the data type
-    # data_types = {
-    #     'INT': {"type": ["integer", "null"]},
-    #     'BIGINT': {"type": ["integer", "null"]},
-    #     'DECIMAL': {"type": ["number", "null"]},
-    #     'VARCHAR': {"type": ["string", "null"]},
-    #     'TIMESTAMP': {"type": ["string", "null"]}
-    # }
+    lowercase_data = data.lower()
 
-    if 'INT' in data:
+    if 'int' in lowercase_data:
         return {"type": ["integer", "null"]}
-    elif 'BIGINT' in data:
+    elif 'bigint' in lowercase_data:
         return {"type": ["integer", "null"]}
-    elif 'DECIMAL' in data:
+    elif 'decimal' in lowercase_data:
         return {"type": ["number", "null"]}
-    elif 'VARCHAR' in data:
+    elif 'varchar' in lowercase_data:
         return {"type": ["string", "null"]}
-    elif 'TIMESTAMP' in data:
+    elif 'timestamp' in lowercase_data:
         return {"type": ["string", "null"]}
 
 
@@ -81,8 +74,8 @@ def create_json_schema_dict(data):
 def create_json_schema_file(data, table_name):
     json_schema = json.dumps(data, indent=4)
 
-    with open(f"./schema_builder/schemas/{table_name}_schema.json", "w") as schema:
+    with open(f"./json_schemas/{table_name}_schema.json", "w") as schema:
         schema.write(json_schema)
 
-    return f"{table_name}_schema.json successfully created."
+    return f"{table_name}_schema.json created successfully."
 
