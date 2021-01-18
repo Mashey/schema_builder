@@ -31,6 +31,9 @@ def schema_from_ddl(file):
 def schema_from_table(data, table_name):
     if data == None:
         return "Please provide data from a SQL DESCRIBE FORMATTED query."
+    
+    if table_name == None:
+        return "Please provide a table name."
 
     clean_table_data = parse_formatted_table(data, table_name)
     table_dict = create_table_dict(clean_table_data)
