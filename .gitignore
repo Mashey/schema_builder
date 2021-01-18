@@ -6,9 +6,5 @@ tests/cassettes
 .coverage
 *.DS_Store
 schema_builder.egg-info
-source_ddl_files
-schemas
-db_tables.txt
-db_tables_truncated.txt
-data_sources/
 json_schemas
+activity_table_ddl.txt
