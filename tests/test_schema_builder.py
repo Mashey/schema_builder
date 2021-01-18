@@ -2,6 +2,7 @@ from schema_builder import __version__
 from schema_builder import *
 from schema_builder.builder_ddl import *
 from schema_builder.builder_table_list import *
+import os
 import pytest
 import pytest_cov
 
@@ -197,9 +198,14 @@ def test_create_json_schema_dict():
     assert json_schema_dict['properties'] == table_dict
 
 
-@pytest.mark.skip(reason="Test needs to be created.")
 def test_create_json_schema_file():
-    pass
+    table_data = open_ddl_file('activity_table_ddl.txt')
+    cleaned_ddl_data = clean_data(table_data)
+    table_dict = create_table_dict(cleaned_ddl_data)
+    json_schema_dict = create_json_schema_dict(table_dict)
+    json_schema_file = create_json_schema_file(json_schema_dict, 'activity')
+
+    assert json_schema_file == 'activity_schema.json created successfully.'
 
 
 @pytest.mark.skip(reason="Test needs to be created.")
