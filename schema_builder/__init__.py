@@ -1,4 +1,6 @@
 import json
+import os
+import logging
 from schema_builder.builder_ddl import open_ddl_file, clean_data
 from schema_builder.builder_table_list import parse_formatted_table
 
@@ -74,8 +76,14 @@ def create_json_schema_dict(data):
 
 def create_json_schema_file(data, table_name):
     json_schema = json.dumps(data, indent=4)
+    path = os.getcwd()
 
-    with open(f"./json_schemas/{table_name}_schema.json", "w") as schema:
+    try:
+        os.mkdir(f'{path}/json_schemas')
+    except FileExistsError:
+        logging.info('/json_schemas directory already exists.')
+
+    with open(f"{path}/json_schemas/{table_name}_schema.json", "w") as schema:
         schema.write(json_schema)
 
     return f"{table_name}_schema.json created successfully."
