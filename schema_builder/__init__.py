@@ -39,8 +39,9 @@ def schema_from_table(data, table_name):
 
 def create_table_dict(data):
     table_dict = {}
+    table_columns = data[1]
 
-    for row in data:
+    for row in table_columns:
         data_type = find_data_type(row[1])
         table_dict[row[0]] = data_type
 
