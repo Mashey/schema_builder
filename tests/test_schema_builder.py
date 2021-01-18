@@ -209,13 +209,13 @@ def test_create_json_schema_file():
 
 
 def test_schema_from_ddl():
-    raw_table_data = open_ddl_file('activity_table_ddl.txt')
-    table_name, clean_table_data = clean_data(raw_table_data)
-    table_dict = create_table_dict(clean_table_data)
-    json_schema_dict = create_json_schema_dict(table_dict)
-    json_schema_file = create_json_schema_file(json_schema_dict, table_name)
+    json_schema_file = schema_from_ddl('activity_table_ddl.txt')
 
     assert json_schema_file == 'activity_schema.json created successfully.'
+
+    json_schema_file = schema_from_ddl(None)
+
+    assert json_schema_file == "Please enter a valid file path."
 
 
 def test_schema_from_table():
@@ -318,6 +318,14 @@ def test_schema_from_table():
     json_schema_file = schema_from_table(table, table_name)
 
     assert json_schema_file == 'activity_schema.json created successfully.'
+
+    json_schema_file = schema_from_table(None, table_name)
+
+    assert json_schema_file == "Please provide data from a SQL DESCRIBE FORMATTED query."
+
+    json_schema_file = schema_from_table(table, None)
+
+    assert json_schema_file == "Please provide a table name."
 
 
 def test_build_json_schema_ddl():
@@ -426,3 +434,7 @@ def test_build_json_schema_table():
     json_schema_file = build_json_schema('table', data=table, table_name=table_name)
 
     assert json_schema_file == 'activity_schema.json created successfully.'
+
+    json_schema_file = build_json_schema('blahblah', data=table, table_name=table_name)
+
+    assert json_schema_file == "Please enter a valid source type [ddl, table]."
