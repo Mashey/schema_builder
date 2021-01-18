@@ -11,3 +11,4 @@ schemas
 db_tables.txt
 db_tables_truncated.txt
 data_sources/
+json_schemas
