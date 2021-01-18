@@ -23,12 +23,14 @@ def remove_new_lines(data):
     new_line_list = []
 
     for line in data:
+        stripped_line = line.strip()
+
         if line == data[0]:
-            new_line_list.append(line[:-3])
+            new_line_list.append(stripped_line[:-2])
         elif line == data[-1]:
-            new_line_list.append(line[1:-1].split(' '))
+            new_line_list.append(stripped_line.split(' '))
         else:
-            new_line_list.append(line[1:-2].split(' '))
+            new_line_list.append(stripped_line[:-1].split(' '))
 
     return new_line_list
 
