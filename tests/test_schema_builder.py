@@ -188,7 +188,13 @@ def test_table_dict():
 
 
 def test_create_json_schema_dict():
-    pass
+    table_data = open_ddl_file('activity_table_ddl.txt')
+    cleaned_ddl_data = clean_data(table_data)
+    table_dict = create_table_dict(cleaned_ddl_data)
+    json_schema_dict = create_json_schema_dict(table_dict)
+
+    assert json_schema_dict['type'] == ['object', 'null']
+    assert json_schema_dict['properties'] == table_dict
 
 
 @pytest.mark.skip(reason="Test needs to be created.")
