@@ -1,5 +1,5 @@
 def open_ddl_file(file):
-    with open(f"./schema_builder/data_sources/ddl_files/{file}") as table:
+    with open(f"{file}") as table:
         table_data = table.readlines()
 
         return table_data
