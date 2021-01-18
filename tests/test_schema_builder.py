@@ -13,11 +13,12 @@ def test_version():
 def test_find_data_type_from_ddl():
     table_data = open_ddl_file('activity_table_ddl.txt')
     cleaned_ddl_data = clean_data(table_data)
+    table_columns = cleaned_ddl_data[1]
 
-    assert find_data_type(cleaned_ddl_data[1][0][1]) == {'type': ['integer', 'null']}
-    assert find_data_type(cleaned_ddl_data[1][1][1]) == {"type": ["string", "null"]}
-    assert find_data_type(cleaned_ddl_data[1][3][1]) == {"type": ["string", "null"]}
-    assert find_data_type(cleaned_ddl_data[1][25][1]) == {"type": ["number", "null"]}
+    assert find_data_type(table_columns[0][1]) == {'type': ['integer', 'null']}
+    assert find_data_type(table_columns[1][1]) == {"type": ["string", "null"]}
+    assert find_data_type(table_columns[3][1]) == {"type": ["string", "null"]}
+    assert find_data_type(table_columns[25][1]) == {"type": ["number", "null"]}
 
 
 def test_find_data_type_from_formatted_table():
@@ -117,19 +118,75 @@ def test_find_data_type_from_formatted_table():
     ]
 
     cleaned_table_data = parse_formatted_table(table, 'activity')
+    table_columns = cleaned_table_data[1]
 
-    assert find_data_type(cleaned_table_data[1][0][1]) == {'type': ['integer', 'null']}
-    assert find_data_type(cleaned_table_data[1][1][1]) == {"type": ["string", "null"]}
-    assert find_data_type(cleaned_table_data[1][3][1]) == {"type": ["string", "null"]}
-    assert find_data_type(cleaned_table_data[1][25][1]) == {"type": ["number", "null"]}
+    assert find_data_type(table_columns[0][1]) == {'type': ['integer', 'null']}
+    assert find_data_type(table_columns[1][1]) == {"type": ["string", "null"]}
+    assert find_data_type(table_columns[3][1]) == {"type": ["string", "null"]}
+    assert find_data_type(table_columns[25][1]) == {"type": ["number", "null"]}
 
 
-@pytest.mark.skip(reason="Test needs to be created.")
 def test_table_dict():
-    pass
+    table_data = open_ddl_file('activity_table_ddl.txt')
+    cleaned_ddl_data = clean_data(table_data)
+    table_dict = create_table_dict(cleaned_ddl_data)
+
+    assert table_dict['activity_group_dsc_id'] == {'type': ['integer', 'null']}
+    assert table_dict['activity_id'] == {'type': ['integer', 'null']}
+    assert table_dict['activity_time_types_yn'] == {'type': ['string', 'null']}
+    assert table_dict['activity_type'] == {'type': ['string', 'null']}
+    assert table_dict['axis'] == {'type': ['string', 'null']}
+    assert table_dict['begin_date'] == {'type': ['string', 'null']}
+    assert table_dict['bill_frequency'] == {'type': ['string', 'null']}
+    assert table_dict['bill_unit'] == {'type': ['integer', 'null']}
+    assert table_dict['billable'] == {'type': ['string', 'null']}
+    assert table_dict['block_type_dsc_id'] == {'type': ['integer', 'null']}
+    assert table_dict['bonus_min'] == {'type': ['integer', 'null']}
+    assert table_dict['changed_by'] == {'type': ['integer', 'null']}
+    assert table_dict['changed_date'] == {'type': ['string', 'null']}
+    assert table_dict['code'] == {'type': ['string', 'null']}
+    assert table_dict['core_service_code_dsc_id'] == {'type': ['integer', 'null']}
+    assert table_dict['cpt_type'] == {'type': ['string', 'null']}
+    assert table_dict['created_by'] == {'type': ['integer', 'null']}
+    assert table_dict['created_date'] == {'type': ['string', 'null']}
+    assert table_dict['crs_code'] == {'type': ['string', 'null']}
+    assert table_dict['darts_activity_code'] == {'type': ['string', 'null']}
+    assert table_dict['darts_include_in_count'] == {'type': ['string', 'null']}
+    assert table_dict['description'] == {'type': ['string', 'null']}
+    assert table_dict['direct_time'] == {'type': ['string', 'null']}
+    assert table_dict['documentation_time'] == {'type': ['string', 'null']}
+    assert table_dict['end_date'] == {'type': ['string', 'null']}
+    assert table_dict['gl_code'] == {'type': ['string', 'null']}
+    assert table_dict['is_video_counseling'] == {'type': ['string', 'null']}
+    assert table_dict['last_commit_time'] == {'type': ['string', 'null']}
+    assert table_dict['last_operation'] == {'type': ['string', 'null']}
+    assert table_dict['last_operation_ingest'] == {'type': ['string', 'null']}
+    assert table_dict['last_operation_time'] == {'type': ['string', 'null']}
+    assert table_dict['mark_future'] == {'type': ['string', 'null']}
+    assert table_dict['mobile_exportable_yn'] == {'type': ['string', 'null']}
+    assert table_dict['modality_code_dsc_id'] == {'type': ['integer', 'null']}
+    assert table_dict['move_timesheet'] == {'type': ['string', 'null']}
+    assert table_dict['multiple_staff_entry_yn'] == {'type': ['string', 'null']}
+    assert table_dict['ndc_code'] == {'type': ['string', 'null']}
+    assert table_dict['ndc_code_num'] == {'type': ['number', 'null']}
+    assert table_dict['nearest_unit'] == {'type': ['integer', 'null']}
+    assert table_dict['non_bill_min_yn'] == {'type': ['string', 'null']}
+    assert table_dict['organization_id'] == {'type': ['integer', 'null']}
+    assert table_dict['other_time'] == {'type': ['string', 'null']}
+    assert table_dict['overlap'] == {'type': ['string', 'null']}
+    assert table_dict['overlap_same_activity'] == {'type': ['string', 'null']}
+    assert table_dict['payer_contract_yn'] == {'type': ['string', 'null']}
+    assert table_dict['req_refer_phy'] == {'type': ['string', 'null']}
+    assert table_dict['show_add_appt_stat_yn'] == {'type': ['string', 'null']}
+    assert table_dict['staff_frequency'] == {'type': ['string', 'null']}
+    assert table_dict['staff_unit'] == {'type': ['integer', 'null']}
+    assert table_dict['timesheet_cat_dsc_id'] == {'type': ['integer', 'null']}
+    assert table_dict['tos'] == {'type': ['string', 'null']}
+    assert table_dict['transportation_yn'] == {'type': ['string', 'null']}
+    assert table_dict['travel_time'] == {'type': ['string', 'null']}
+    assert table_dict['unit_calculation'] == {'type': ['string', 'null']}
 
 
-@pytest.mark.skip(reason="Test needs to be created.")
 def test_create_json_schema_dict():
     pass
 
