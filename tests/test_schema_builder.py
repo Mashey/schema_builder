@@ -1,25 +1,22 @@
 from schema_builder import __version__
-from schema_builder import *
-from schema_builder.builder_ddl import *
+import schema_builder as sb
+import schema_builder.builder_ddl as ddl
 from schema_builder.builder_table_list import *
-import os
-import pytest
-import pytest_cov
 
 
 def test_version():
-    assert __version__ == '0.1.0'
+    assert __version__ == '0.1.1'
 
 
 def test_find_data_type_from_ddl():
-    table_data = open_ddl_file('activity_table_ddl.txt')
-    cleaned_ddl_data = clean_data(table_data)
+    table_data = ddl.open_ddl_file('activity_table_ddl.txt')
+    cleaned_ddl_data = ddl.clean_data(table_data)
     table_columns = cleaned_ddl_data[1]
 
-    assert find_data_type(table_columns[0][1]) == {'type': ['integer', 'null']}
-    assert find_data_type(table_columns[1][1]) == {"type": ["string", "null"]}
-    assert find_data_type(table_columns[3][1]) == {"type": ["string", "null"]}
-    assert find_data_type(table_columns[25][1]) == {"type": ["number", "null"]}
+    assert sb.find_data_type(table_columns[0][1]) == {'type': ['integer', 'null']}
+    assert sb.find_data_type(table_columns[1][1]) == {"type": ["string", "null"]}
+    assert sb.find_data_type(table_columns[3][1]) == {"type": ["string", "null"]}
+    assert sb.find_data_type(table_columns[25][1]) == {"type": ["number", "null"]}
 
 
 def test_find_data_type_from_formatted_table():
@@ -121,16 +118,16 @@ def test_find_data_type_from_formatted_table():
     cleaned_table_data = parse_formatted_table(table, 'activity')
     table_columns = cleaned_table_data[1]
 
-    assert find_data_type(table_columns[0][1]) == {'type': ['integer', 'null']}
-    assert find_data_type(table_columns[1][1]) == {"type": ["string", "null"]}
-    assert find_data_type(table_columns[3][1]) == {"type": ["string", "null"]}
-    assert find_data_type(table_columns[25][1]) == {"type": ["number", "null"]}
+    assert sb.find_data_type(table_columns[0][1]) == {'type': ['integer', 'null']}
+    assert sb.find_data_type(table_columns[1][1]) == {"type": ["string", "null"]}
+    assert sb.find_data_type(table_columns[3][1]) == {"type": ["string", "null"]}
+    assert sb.find_data_type(table_columns[25][1]) == {"type": ["number", "null"]}
 
 
 def test_table_dict():
-    table_data = open_ddl_file('activity_table_ddl.txt')
-    cleaned_ddl_data = clean_data(table_data)
-    table_dict = create_table_dict(cleaned_ddl_data)
+    table_data = ddl.open_ddl_file('activity_table_ddl.txt')
+    cleaned_ddl_data = ddl.clean_data(table_data)
+    table_dict = sb.create_table_dict(cleaned_ddl_data)
 
     assert table_dict['activity_group_dsc_id'] == {'type': ['integer', 'null']}
     assert table_dict['activity_id'] == {'type': ['integer', 'null']}
@@ -189,31 +186,31 @@ def test_table_dict():
 
 
 def test_create_json_schema_dict():
-    table_data = open_ddl_file('activity_table_ddl.txt')
-    cleaned_ddl_data = clean_data(table_data)
-    table_dict = create_table_dict(cleaned_ddl_data)
-    json_schema_dict = create_json_schema_dict(table_dict)
+    table_data = ddl.open_ddl_file('activity_table_ddl.txt')
+    cleaned_ddl_data = ddl.clean_data(table_data)
+    table_dict = sb.create_table_dict(cleaned_ddl_data)
+    json_schema_dict = sb.create_json_schema_dict(table_dict)
 
     assert json_schema_dict['type'] == ['object', 'null']
     assert json_schema_dict['properties'] == table_dict
 
 
 def test_create_json_schema_file():
-    table_data = open_ddl_file('activity_table_ddl.txt')
-    cleaned_ddl_data = clean_data(table_data)
-    table_dict = create_table_dict(cleaned_ddl_data)
-    json_schema_dict = create_json_schema_dict(table_dict)
-    json_schema_file = create_json_schema_file(json_schema_dict, 'activity')
+    table_data = ddl.open_ddl_file('activity_table_ddl.txt')
+    cleaned_ddl_data = ddl.clean_data(table_data)
+    table_dict = sb.create_table_dict(cleaned_ddl_data)
+    json_schema_dict = sb.create_json_schema_dict(table_dict)
+    json_schema_file = sb.create_json_schema_file(json_schema_dict, 'activity')
 
     assert json_schema_file == 'activity_schema.json created successfully.'
 
 
 def test_schema_from_ddl():
-    json_schema_file = schema_from_ddl('activity_table_ddl.txt')
+    json_schema_file = sb.schema_from_ddl('activity_table_ddl.txt')
 
     assert json_schema_file == 'activity_schema.json created successfully.'
 
-    json_schema_file = schema_from_ddl(None)
+    json_schema_file = sb.schema_from_ddl(None)
 
     assert json_schema_file == "Please enter a valid file path."
 
@@ -315,21 +312,21 @@ def test_schema_from_table():
         ('', 'serialization.format', '1                   ')
     ]
 
-    json_schema_file = schema_from_table(table, table_name)
+    json_schema_file = sb.schema_from_table(table, table_name)
 
     assert json_schema_file == 'activity_schema.json created successfully.'
 
-    json_schema_file = schema_from_table(None, table_name)
+    json_schema_file = sb.schema_from_table(None, table_name)
 
     assert json_schema_file == "Please provide data from a SQL DESCRIBE FORMATTED query."
 
-    json_schema_file = schema_from_table(table, None)
+    json_schema_file = sb.schema_from_table(table, None)
 
     assert json_schema_file == "Please provide a table name."
 
 
 def test_build_json_schema_ddl():
-    json_schema_file = build_json_schema('ddl', file='activity_table_ddl.txt')
+    json_schema_file = sb.build_json_schema('ddl', file='activity_table_ddl.txt')
 
     assert json_schema_file == 'activity_schema.json created successfully.'
 
@@ -431,10 +428,10 @@ def test_build_json_schema_table():
         ('', 'serialization.format', '1                   ')
     ]
 
-    json_schema_file = build_json_schema('table', data=table, table_name=table_name)
+    json_schema_file = sb.build_json_schema('table', data=table, table_name=table_name)
 
     assert json_schema_file == 'activity_schema.json created successfully.'
 
-    json_schema_file = build_json_schema('blahblah', data=table, table_name=table_name)
+    json_schema_file = sb.build_json_schema('blahblah', data=table, table_name=table_name)
 
     assert json_schema_file == "Please enter a valid source type [ddl, table]."
