@@ -1,7 +1,7 @@
 from schema_builder import __version__
 import schema_builder as sb
 import schema_builder.builder_ddl as ddl
-from schema_builder.builder_table_list import *
+from schema_builder.builder_table_list import parse_formatted_table
 
 
 def test_version():
