@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "schema-builder"
-version = "0.1.1"
+version = "0.1.2"
 description = "Build JSON schemas from database tables."
 authors = ["Jordan Williams <jordan.wallace.williams@gmail.com>", "Michael Cooper <macoop2363@gmail.com>"]
 

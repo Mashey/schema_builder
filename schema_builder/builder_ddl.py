@@ -8,9 +8,9 @@ def open_ddl_file(file):
 def clean_data(data):
     step1 = remove_unnecessary_items(data)
     step2 = remove_new_lines(step1)
-    table_name, table_schema = set_schema_name(step2)
+    table_schema = set_schema_name(step2)
 
-    return table_name, table_schema
+    return table_schema
 
 
 def remove_unnecessary_items(data):
@@ -36,7 +36,8 @@ def remove_new_lines(data):
 
 
 def set_schema_name(data):
-    table_name = data[0].split('brightview_prod.')
+    table_name = data[0].split('brightview_prod.')[1]
+    table = [table_name, data[1:]]
 
-    return table_name[1], data[1:]
+    return table
 

@@ -1,11 +1,6 @@
-from schema_builder import __version__
 import schema_builder as sb
 import schema_builder.builder_ddl as ddl
 from schema_builder.builder_table_list import parse_formatted_table
-
-
-def test_version():
-    assert __version__ == '0.1.1'
 
 
 def test_find_data_type_from_ddl():

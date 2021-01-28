@@ -4,8 +4,6 @@ import logging
 from schema_builder.builder_ddl import open_ddl_file, clean_data
 from schema_builder.builder_table_list import parse_formatted_table
 
-__version__ = '0.1.1'
-
 
 def build_json_schema(source_type, file=None, data=None, table_name=None):
     if source_type == 'ddl':
@@ -21,7 +19,8 @@ def schema_from_ddl(file):
         return "Please enter a valid file path."
 
     raw_table_data = open_ddl_file(file)
-    table_name, clean_table_data = clean_data(raw_table_data)
+    clean_table_data = clean_data(raw_table_data)
+    table_name = clean_table_data[0]
     table_dict = create_table_dict(clean_table_data)
     json_schema_dict = create_json_schema_dict(table_dict)
 
@@ -63,6 +62,10 @@ def find_data_type(data):
     elif 'decimal' in lowercase_data:
         return {"type": ["number", "null"]}
     elif 'varchar' in lowercase_data:
+        return {"type": ["string", "null"]}
+    elif 'char' in lowercase_data:
+        return {"type": ["string", "null"]}
+    elif 'string' in lowercase_data:
         return {"type": ["string", "null"]}
     elif 'timestamp' in lowercase_data:
         return {"type": ["string", "null"]}
