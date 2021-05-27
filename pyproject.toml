@@ -1,17 +1,21 @@
 [tool.poetry]
 name = "schema-builder"
 version = "0.1.2"
-description = "Build JSON schemas from database tables."
+description = "Build JSON Schemas."
 authors = ["Jordan Williams <jordan.wallace.williams@gmail.com>", "Michael Cooper <macoop2363@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
-pylint = "^2.6.0"
-autopep8 = "^1.5.4"
+black = "^21.5b1"
+coverage = "^5.5"
+coveralls = "^3.1.0"
+pylint = "^2.8.2"
+pytest = "^6.2.4"
 pytest-cov = "^2.11.1"
+pytest-mock = "^3.6.1"
+python-dotenv = "^0.17.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
