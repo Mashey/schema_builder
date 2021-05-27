@@ -71,6 +71,10 @@ def find_data_type(data):
         return {"type": ["string", "null"]}
 
 
+def find_json_data_type():
+    pass
+
+
 def create_json_schema_dict(data):
     json_schema = {
         "type": ["object", "null"],
