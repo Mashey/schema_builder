@@ -8,5 +8,4 @@ tests/cassettes
 schema_builder.egg-info
 json_schemas/
 dist
-poetry.lock
 procedure_table.txt
