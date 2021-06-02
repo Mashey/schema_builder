@@ -28,16 +28,15 @@ def remove_new_lines(data):
         if line == data[0]:
             new_line_list.append(stripped_line[:-2])
         elif line == data[-1]:
-            new_line_list.append(stripped_line.split(' '))
+            new_line_list.append(stripped_line.split(" "))
         else:
-            new_line_list.append(stripped_line[:-1].split(' '))
+            new_line_list.append(stripped_line[:-1].split(" "))
 
     return new_line_list
 
 
 def set_schema_name(data):
-    table_name = data[0].split('brightview_prod.')[1]
+    table_name = data[0].split("brightview_prod.")[1]
     table = [table_name, data[1:]]
 
     return table
-
