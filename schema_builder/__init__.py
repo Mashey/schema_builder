@@ -6,9 +6,9 @@ from schema_builder.builder_table_list import parse_formatted_table
 
 
 def build_json_schema(source_type, file=None, data=None, table_name=None):
-    if source_type == 'ddl':
+    if source_type == "ddl":
         return schema_from_ddl(file)
-    elif source_type == 'table':
+    elif source_type == "table":
         return schema_from_table(data, table_name)
     else:
         return "Please enter a valid source type [ddl, table]."
@@ -30,7 +30,7 @@ def schema_from_ddl(file):
 def schema_from_table(data, table_name):
     if data == None:
         return "Please provide data from a SQL DESCRIBE FORMATTED query."
-    
+
     if table_name == None:
         return "Please provide a table name."
 
@@ -39,6 +39,10 @@ def schema_from_table(data, table_name):
     json_schema_dict = create_json_schema_dict(table_dict)
 
     return create_json_schema_file(json_schema_dict, table_name)
+
+
+def schema_from_api():
+    pass
 
 
 def create_table_dict(data):
@@ -55,19 +59,19 @@ def create_table_dict(data):
 def find_data_type(data):
     lowercase_data = data.lower()
 
-    if 'int' in lowercase_data:
+    if "int" in lowercase_data:
         return {"type": ["integer", "null"]}
-    elif 'bigint' in lowercase_data:
+    elif "bigint" in lowercase_data:
         return {"type": ["integer", "null"]}
-    elif 'decimal' in lowercase_data:
+    elif "decimal" in lowercase_data:
         return {"type": ["number", "null"]}
-    elif 'varchar' in lowercase_data:
+    elif "varchar" in lowercase_data:
         return {"type": ["string", "null"]}
-    elif 'char' in lowercase_data:
+    elif "char" in lowercase_data:
         return {"type": ["string", "null"]}
-    elif 'string' in lowercase_data:
+    elif "string" in lowercase_data:
         return {"type": ["string", "null"]}
-    elif 'timestamp' in lowercase_data:
+    elif "timestamp" in lowercase_data:
         return {"type": ["string", "null"]}
 
 
@@ -76,10 +80,7 @@ def find_json_data_type():
 
 
 def create_json_schema_dict(data):
-    json_schema = {
-        "type": ["object", "null"],
-        "properties": data
-    }
+    json_schema = {"type": ["object", "null"], "properties": data}
 
     return json_schema
 
@@ -89,12 +90,11 @@ def create_json_schema_file(data, table_name):
     path = os.getcwd()
 
     try:
-        os.mkdir(f'{path}/json_schemas')
+        os.mkdir(f"{path}/json_schemas")
     except FileExistsError:
-        logging.info('/json_schemas directory already exists.')
+        logging.info("/json_schemas directory already exists.")
 
     with open(f"{path}/json_schemas/{table_name}_schema.json", "w") as schema:
         schema.write(json_schema)
 
     return f"{table_name}_schema.json created successfully."
-
