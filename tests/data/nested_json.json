@@ -1,0 +1,1382 @@
+{
+  "Count": 0,
+  "Data": [
+    {
+      "Id": 0,
+      "SubReservations": [{}],
+      "ArrivalDate": "2021-04-13T21:42:56.494Z",
+      "DepartureDate": "2021-04-13T21:42:56.494Z",
+      "HotelCode": "string",
+      "UnitCode": "string",
+      "UnitTypeCode": "string",
+      "RequestedUnitTypeCode": "string",
+      "Status": "U",
+      "NumberOfPersons": 0,
+      "NumberOfChildren": 0,
+      "NumberOfInfants": 0,
+      "NumberOfUnits": 0,
+      "NumberOfNights": 0,
+      "Comments": "string",
+      "Source": "string",
+      "SubSource": "string",
+      "GroupCode": "string",
+      "GuaranteeTypeCode": "string",
+      "MarketCode": "string",
+      "PromoCode": "string",
+      "ActualArrivalDate": "2021-04-13T21:42:56.494Z",
+      "ActualDepartureDate": "2021-04-13T21:42:56.494Z",
+      "Booker": {
+        "Id": 0,
+        "Title": "string",
+        "Names": [
+          {
+            "Title": "string",
+            "FirstName": "string",
+            "LastName": "string",
+            "Primary": true
+          }
+        ],
+        "EmailAddresses": [
+          {
+            "Id": 0,
+            "Type": "Undefined",
+            "Value": "string",
+            "Verified": true,
+            "Source": "string",
+            "IsPrimary": true,
+            "CreatedDateTime": "2021-04-13T21:42:56.494Z"
+          }
+        ],
+        "LanguageCode": "string",
+        "CountryCode": "string",
+        "Gender": "Unknown",
+        "DateOfBirth": "2021-04-13T21:42:56.494Z",
+        "HotelCode": "string",
+        "Source": "string",
+        "JobTitle": "string",
+        "IsMember": true,
+        "NewsletterSubscription": true,
+        "Company": {
+          "Id": 0,
+          "Name": "string",
+          "EmailAddress": "string",
+          "Comments": "string",
+          "VatNumber": "string",
+          "HotelCode": "string",
+          "Fax": "string",
+          "CreatedDateTime": "2021-04-13T21:42:56.494Z",
+          "LastUpdateDateTime": "2021-04-13T21:42:56.494Z",
+          "Addresses": [
+            {
+              "Id": 0,
+              "City": "string",
+              "HouseNumber": "string",
+              "State": "string",
+              "Street": "string",
+              "ZipCode": "string",
+              "CountryCode": "string",
+              "LanguageCode": "string",
+              "Source": "string",
+              "Type": "Undefined",
+              "IsPrimary": true,
+              "CreatedDateTime": "2021-04-13T21:42:56.494Z",
+              "LastUpdateDateTime": "2021-04-13T21:42:56.494Z"
+            }
+          ],
+          "PhoneNumbers": [
+            {
+              "Id": 0,
+              "CountryAccessCode": "string",
+              "Number": "string",
+              "IsPrimary": true,
+              "Source": "string",
+              "Type": "Unknown",
+              "CreatedDateTime": "2021-04-13T21:42:56.494Z",
+              "LastUpdateDateTime": "2021-04-13T21:42:56.494Z"
+            }
+          ],
+          "ExternalReferences": [
+            {
+              "Code": "string",
+              "TypeCode": "string",
+              "SystemCode": "string"
+            }
+          ],
+          "Attribues": [
+            {
+              "Id": 0,
+              "Code": "string",
+              "Value": "string",
+              "TypeCode": "string",
+              "StartDateTime": "2021-04-13T21:42:56.494Z",
+              "EndDateTime": "2021-04-13T21:42:56.494Z",
+              "CreateDateTime": "2021-04-13T21:42:56.494Z",
+              "LastUpdateDateTime": "2021-04-13T21:42:56.494Z"
+            }
+          ]
+        },
+        "CompanyName": "string",
+        "ExternalReferences": [
+          {
+            "Code": "string",
+            "TypeCode": "string",
+            "SystemCode": "string"
+          }
+        ],
+        "Attributes": [
+          {
+            "Id": 0,
+            "Code": "string",
+            "Value": "string",
+            "TypeCode": "string",
+            "HotelCode": "string",
+            "StartDate": "2021-04-13T21:42:56.494Z",
+            "EndDate": "2021-04-13T21:42:56.494Z"
+          }
+        ],
+        "Addresses": [
+          {
+            "Id": 0,
+            "City": "string",
+            "HouseNumber": "string",
+            "State": "string",
+            "Street": "string",
+            "ZipCode": "string",
+            "CountryCode": "string",
+            "LanguageCode": "string",
+            "Source": "string",
+            "Type": "Undefined",
+            "IsPrimary": true,
+            "CreatedDateTime": "2021-04-13T21:42:56.494Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.494Z"
+          }
+        ],
+        "PhoneNumbers": [
+          {
+            "Id": 0,
+            "CountryAccessCode": "string",
+            "Number": "string",
+            "IsPrimary": true,
+            "Source": "string",
+            "Type": "Unknown",
+            "CreatedDateTime": "2021-04-13T21:42:56.494Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.494Z"
+          }
+        ],
+        "DataConsents": [
+          {
+            "Id": 0,
+            "Message": "string",
+            "Source": "string",
+            "SubSource": "string",
+            "Given": true,
+            "Type": "Unknown",
+            "ValidUntil": "2021-04-13T21:42:56.494Z",
+            "CreatedDateTime": "2021-04-13T21:42:56.494Z",
+            "LastUpdatedDateTime": "2021-04-13T21:42:56.494Z"
+          }
+        ],
+        "PaymentMethods": [
+          {
+            "Id": 0,
+            "TypeCode": "string",
+            "Code": "string",
+            "Name": "string",
+            "Value": "string",
+            "SubTypeCode": "string",
+            "PaymentIntegrationCode": "string",
+            "PaymentIntegrationMerchantCode": "string",
+            "ExpiryDate": "2021-04-13T21:42:56.494Z"
+          }
+        ],
+        "Preferences": [
+          {
+            "Id": 0,
+            "PersonId": 0,
+            "ReservationId": 0,
+            "Code": "string",
+            "Value": "string",
+            "TypeCode": "string",
+            "Source": "string",
+            "HotelCode": "string",
+            "CreatedDateTime": "2021-04-13T21:42:56.494Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.494Z"
+          }
+        ],
+        "LoyaltyLevels": [
+          {
+            "Id": 0,
+            "LevelCode": "string",
+            "Type": "Unknown",
+            "Rank": 0,
+            "ValidFrom": "2021-04-13T21:42:56.494Z",
+            "ValidUntil": "2021-04-13T21:42:56.494Z",
+            "Source": "string",
+            "CreatedDateTime": "2021-04-13T21:42:56.494Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.494Z"
+          }
+        ],
+        "StaySummaries": [
+          {
+            "Id": 0,
+            "CurrencyCode": "string",
+            "HotelCode": "string",
+            "LastStayDate": "2021-04-13T21:42:56.494Z",
+            "NumberOfNights": 0,
+            "NumberOfStays": 0,
+            "StayTotalRevenue": 0,
+            "StayTotalRevenueEnterprise": 0,
+            "LastStayUnit": "string",
+            "LastStayRevenue": 0,
+            "CreatedDateTime": "2021-04-13T21:42:56.494Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.494Z"
+          }
+        ],
+        "Documents": [
+          {
+            "Id": 0,
+            "PersonId": 0,
+            "HotelCode": "string",
+            "Source": "string",
+            "Number": "string",
+            "Nationality": "string",
+            "Type": "string",
+            "IssueCity": "string",
+            "IssueCountry": "string",
+            "PlaceOfBirth": "string",
+            "ExpiryDate": "2021-04-13T21:42:56.494Z",
+            "IssueDate": "2021-04-13T21:42:56.494Z",
+            "IsPrimary": true,
+            "LastChangedBySystem": "string",
+            "CreatedDateTime": "2021-04-13T21:42:56.494Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.494Z"
+          }
+        ],
+        "GlobalStay": {
+          "CurrencyCode": "string",
+          "LastStayDate": "2021-04-13T21:42:56.494Z",
+          "NumberOfNights": 0,
+          "NumberOfStays": 0,
+          "StayTotalRevenue": 0,
+          "LastStayUnit": "string",
+          "LastStayHotelCode": "string",
+          "HotelDiversity": 0
+        },
+        "LastChangedBySystem": "string",
+        "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+        "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+      },
+      "PrimaryGuest": {
+        "Id": 0,
+        "Title": "string",
+        "Names": [
+          {
+            "Title": "string",
+            "FirstName": "string",
+            "LastName": "string",
+            "Primary": true
+          }
+        ],
+        "EmailAddresses": [
+          {
+            "Id": 0,
+            "Type": "Undefined",
+            "Value": "string",
+            "Verified": true,
+            "Source": "string",
+            "IsPrimary": true,
+            "CreatedDateTime": "2021-04-13T21:42:56.495Z"
+          }
+        ],
+        "LanguageCode": "string",
+        "CountryCode": "string",
+        "Gender": "Unknown",
+        "DateOfBirth": "2021-04-13T21:42:56.495Z",
+        "HotelCode": "string",
+        "Source": "string",
+        "JobTitle": "string",
+        "IsMember": true,
+        "NewsletterSubscription": true,
+        "Company": {
+          "Id": 0,
+          "Name": "string",
+          "EmailAddress": "string",
+          "Comments": "string",
+          "VatNumber": "string",
+          "HotelCode": "string",
+          "Fax": "string",
+          "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+          "LastUpdateDateTime": "2021-04-13T21:42:56.495Z",
+          "Addresses": [
+            {
+              "Id": 0,
+              "City": "string",
+              "HouseNumber": "string",
+              "State": "string",
+              "Street": "string",
+              "ZipCode": "string",
+              "CountryCode": "string",
+              "LanguageCode": "string",
+              "Source": "string",
+              "Type": "Undefined",
+              "IsPrimary": true,
+              "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+              "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+            }
+          ],
+          "PhoneNumbers": [
+            {
+              "Id": 0,
+              "CountryAccessCode": "string",
+              "Number": "string",
+              "IsPrimary": true,
+              "Source": "string",
+              "Type": "Unknown",
+              "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+              "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+            }
+          ],
+          "ExternalReferences": [
+            {
+              "Code": "string",
+              "TypeCode": "string",
+              "SystemCode": "string"
+            }
+          ],
+          "Attribues": [
+            {
+              "Id": 0,
+              "Code": "string",
+              "Value": "string",
+              "TypeCode": "string",
+              "StartDateTime": "2021-04-13T21:42:56.495Z",
+              "EndDateTime": "2021-04-13T21:42:56.495Z",
+              "CreateDateTime": "2021-04-13T21:42:56.495Z",
+              "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+            }
+          ]
+        },
+        "CompanyName": "string",
+        "ExternalReferences": [
+          {
+            "Code": "string",
+            "TypeCode": "string",
+            "SystemCode": "string"
+          }
+        ],
+        "Attributes": [
+          {
+            "Id": 0,
+            "Code": "string",
+            "Value": "string",
+            "TypeCode": "string",
+            "HotelCode": "string",
+            "StartDate": "2021-04-13T21:42:56.495Z",
+            "EndDate": "2021-04-13T21:42:56.495Z"
+          }
+        ],
+        "Addresses": [
+          {
+            "Id": 0,
+            "City": "string",
+            "HouseNumber": "string",
+            "State": "string",
+            "Street": "string",
+            "ZipCode": "string",
+            "CountryCode": "string",
+            "LanguageCode": "string",
+            "Source": "string",
+            "Type": "Undefined",
+            "IsPrimary": true,
+            "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+          }
+        ],
+        "PhoneNumbers": [
+          {
+            "Id": 0,
+            "CountryAccessCode": "string",
+            "Number": "string",
+            "IsPrimary": true,
+            "Source": "string",
+            "Type": "Unknown",
+            "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+          }
+        ],
+        "DataConsents": [
+          {
+            "Id": 0,
+            "Message": "string",
+            "Source": "string",
+            "SubSource": "string",
+            "Given": true,
+            "Type": "Unknown",
+            "ValidUntil": "2021-04-13T21:42:56.495Z",
+            "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+            "LastUpdatedDateTime": "2021-04-13T21:42:56.495Z"
+          }
+        ],
+        "PaymentMethods": [
+          {
+            "Id": 0,
+            "TypeCode": "string",
+            "Code": "string",
+            "Name": "string",
+            "Value": "string",
+            "SubTypeCode": "string",
+            "PaymentIntegrationCode": "string",
+            "PaymentIntegrationMerchantCode": "string",
+            "ExpiryDate": "2021-04-13T21:42:56.495Z"
+          }
+        ],
+        "Preferences": [
+          {
+            "Id": 0,
+            "PersonId": 0,
+            "ReservationId": 0,
+            "Code": "string",
+            "Value": "string",
+            "TypeCode": "string",
+            "Source": "string",
+            "HotelCode": "string",
+            "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+          }
+        ],
+        "LoyaltyLevels": [
+          {
+            "Id": 0,
+            "LevelCode": "string",
+            "Type": "Unknown",
+            "Rank": 0,
+            "ValidFrom": "2021-04-13T21:42:56.495Z",
+            "ValidUntil": "2021-04-13T21:42:56.495Z",
+            "Source": "string",
+            "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+          }
+        ],
+        "StaySummaries": [
+          {
+            "Id": 0,
+            "CurrencyCode": "string",
+            "HotelCode": "string",
+            "LastStayDate": "2021-04-13T21:42:56.495Z",
+            "NumberOfNights": 0,
+            "NumberOfStays": 0,
+            "StayTotalRevenue": 0,
+            "StayTotalRevenueEnterprise": 0,
+            "LastStayUnit": "string",
+            "LastStayRevenue": 0,
+            "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+          }
+        ],
+        "Documents": [
+          {
+            "Id": 0,
+            "PersonId": 0,
+            "HotelCode": "string",
+            "Source": "string",
+            "Number": "string",
+            "Nationality": "string",
+            "Type": "string",
+            "IssueCity": "string",
+            "IssueCountry": "string",
+            "PlaceOfBirth": "string",
+            "ExpiryDate": "2021-04-13T21:42:56.495Z",
+            "IssueDate": "2021-04-13T21:42:56.495Z",
+            "IsPrimary": true,
+            "LastChangedBySystem": "string",
+            "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+          }
+        ],
+        "GlobalStay": {
+          "CurrencyCode": "string",
+          "LastStayDate": "2021-04-13T21:42:56.495Z",
+          "NumberOfNights": 0,
+          "NumberOfStays": 0,
+          "StayTotalRevenue": 0,
+          "LastStayUnit": "string",
+          "LastStayHotelCode": "string",
+          "HotelDiversity": 0
+        },
+        "LastChangedBySystem": "string",
+        "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+        "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+      },
+      "RatePlan": {
+        "Code": "string",
+        "Name": "string",
+        "Description": "string",
+        "CurrencyCode": "string",
+        "Breakdown": [
+          {
+            "Date": "2021-04-13T21:42:56.495Z",
+            "ExcludedTaxAmount": 0,
+            "IncludedTaxAmount": 0,
+            "TaxAmount": 0,
+            "Amount": 0,
+            "RateMode": "PerItem",
+            "Quantity": 0
+          }
+        ],
+        "TaxIncluded": true,
+        "TotalPrice": 0,
+        "TotalTaxAmount": 0,
+        "TotalExtraTaxAmount": 0,
+        "CancellationPolicyCode": "string",
+        "GuaranteeCode": "string",
+        "MarketCode": "string",
+        "FullStayWithTaxAndAdditionals": 0
+      },
+      "Services": [
+        {
+          "Id": 0,
+          "Type": "Room",
+          "Code": "string",
+          "Name": "string",
+          "Description": "string",
+          "StartDateTime": "2021-04-13T21:42:56.495Z",
+          "EndDateTime": "2021-04-13T21:42:56.495Z",
+          "ExcludedTaxAmount": 0,
+          "IncludedTaxAmount": 0,
+          "Amount": 0,
+          "Quantity": 0,
+          "UnitCode": "string",
+          "NumberOfPersons": 0,
+          "NumberOfChildren": 0,
+          "UnitTypeCode": "string",
+          "UnitTypeName": "string",
+          "ResourceCode": "string",
+          "MarketCode": "string",
+          "Source": "string",
+          "System": "string",
+          "SubSource": "string",
+          "BookingDateTime": "2021-04-13T21:42:56.495Z",
+          "CancellationDateTime": "2021-04-13T21:42:56.495Z",
+          "StatusCode": "string",
+          "LinkedPersons": [
+            {
+              "Id": 0,
+              "RelationType": "Guest",
+              "ExternalSystemCode": "string",
+              "PersonId": 0,
+              "Person": {
+                "Id": 0,
+                "Title": "string",
+                "Names": [
+                  {
+                    "Title": "string",
+                    "FirstName": "string",
+                    "LastName": "string",
+                    "Primary": true
+                  }
+                ],
+                "EmailAddresses": [
+                  {
+                    "Id": 0,
+                    "Type": "Undefined",
+                    "Value": "string",
+                    "Verified": true,
+                    "Source": "string",
+                    "IsPrimary": true,
+                    "CreatedDateTime": "2021-04-13T21:42:56.495Z"
+                  }
+                ],
+                "LanguageCode": "string",
+                "CountryCode": "string",
+                "Gender": "Unknown",
+                "DateOfBirth": "2021-04-13T21:42:56.495Z",
+                "HotelCode": "string",
+                "Source": "string",
+                "JobTitle": "string",
+                "IsMember": true,
+                "NewsletterSubscription": true,
+                "Company": {
+                  "Id": 0,
+                  "Name": "string",
+                  "EmailAddress": "string",
+                  "Comments": "string",
+                  "VatNumber": "string",
+                  "HotelCode": "string",
+                  "Fax": "string",
+                  "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+                  "LastUpdateDateTime": "2021-04-13T21:42:56.495Z",
+                  "Addresses": [
+                    {
+                      "Id": 0,
+                      "City": "string",
+                      "HouseNumber": "string",
+                      "State": "string",
+                      "Street": "string",
+                      "ZipCode": "string",
+                      "CountryCode": "string",
+                      "LanguageCode": "string",
+                      "Source": "string",
+                      "Type": "Undefined",
+                      "IsPrimary": true,
+                      "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+                      "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+                    }
+                  ],
+                  "PhoneNumbers": [
+                    {
+                      "Id": 0,
+                      "CountryAccessCode": "string",
+                      "Number": "string",
+                      "IsPrimary": true,
+                      "Source": "string",
+                      "Type": "Unknown",
+                      "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+                      "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+                    }
+                  ],
+                  "ExternalReferences": [
+                    {
+                      "Code": "string",
+                      "TypeCode": "string",
+                      "SystemCode": "string"
+                    }
+                  ],
+                  "Attribues": [
+                    {
+                      "Id": 0,
+                      "Code": "string",
+                      "Value": "string",
+                      "TypeCode": "string",
+                      "StartDateTime": "2021-04-13T21:42:56.495Z",
+                      "EndDateTime": "2021-04-13T21:42:56.495Z",
+                      "CreateDateTime": "2021-04-13T21:42:56.495Z",
+                      "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+                    }
+                  ]
+                },
+                "CompanyName": "string",
+                "ExternalReferences": [
+                  {
+                    "Code": "string",
+                    "TypeCode": "string",
+                    "SystemCode": "string"
+                  }
+                ],
+                "Attributes": [
+                  {
+                    "Id": 0,
+                    "Code": "string",
+                    "Value": "string",
+                    "TypeCode": "string",
+                    "HotelCode": "string",
+                    "StartDate": "2021-04-13T21:42:56.495Z",
+                    "EndDate": "2021-04-13T21:42:56.495Z"
+                  }
+                ],
+                "Addresses": [
+                  {
+                    "Id": 0,
+                    "City": "string",
+                    "HouseNumber": "string",
+                    "State": "string",
+                    "Street": "string",
+                    "ZipCode": "string",
+                    "CountryCode": "string",
+                    "LanguageCode": "string",
+                    "Source": "string",
+                    "Type": "Undefined",
+                    "IsPrimary": true,
+                    "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+                    "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+                  }
+                ],
+                "PhoneNumbers": [
+                  {
+                    "Id": 0,
+                    "CountryAccessCode": "string",
+                    "Number": "string",
+                    "IsPrimary": true,
+                    "Source": "string",
+                    "Type": "Unknown",
+                    "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+                    "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+                  }
+                ],
+                "DataConsents": [
+                  {
+                    "Id": 0,
+                    "Message": "string",
+                    "Source": "string",
+                    "SubSource": "string",
+                    "Given": true,
+                    "Type": "Unknown",
+                    "ValidUntil": "2021-04-13T21:42:56.495Z",
+                    "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+                    "LastUpdatedDateTime": "2021-04-13T21:42:56.495Z"
+                  }
+                ],
+                "PaymentMethods": [
+                  {
+                    "Id": 0,
+                    "TypeCode": "string",
+                    "Code": "string",
+                    "Name": "string",
+                    "Value": "string",
+                    "SubTypeCode": "string",
+                    "PaymentIntegrationCode": "string",
+                    "PaymentIntegrationMerchantCode": "string",
+                    "ExpiryDate": "2021-04-13T21:42:56.495Z"
+                  }
+                ],
+                "Preferences": [
+                  {
+                    "Id": 0,
+                    "PersonId": 0,
+                    "ReservationId": 0,
+                    "Code": "string",
+                    "Value": "string",
+                    "TypeCode": "string",
+                    "Source": "string",
+                    "HotelCode": "string",
+                    "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+                    "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+                  }
+                ],
+                "LoyaltyLevels": [
+                  {
+                    "Id": 0,
+                    "LevelCode": "string",
+                    "Type": "Unknown",
+                    "Rank": 0,
+                    "ValidFrom": "2021-04-13T21:42:56.495Z",
+                    "ValidUntil": "2021-04-13T21:42:56.495Z",
+                    "Source": "string",
+                    "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+                    "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+                  }
+                ],
+                "StaySummaries": [
+                  {
+                    "Id": 0,
+                    "CurrencyCode": "string",
+                    "HotelCode": "string",
+                    "LastStayDate": "2021-04-13T21:42:56.495Z",
+                    "NumberOfNights": 0,
+                    "NumberOfStays": 0,
+                    "StayTotalRevenue": 0,
+                    "StayTotalRevenueEnterprise": 0,
+                    "LastStayUnit": "string",
+                    "LastStayRevenue": 0,
+                    "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+                    "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+                  }
+                ],
+                "Documents": [
+                  {
+                    "Id": 0,
+                    "PersonId": 0,
+                    "HotelCode": "string",
+                    "Source": "string",
+                    "Number": "string",
+                    "Nationality": "string",
+                    "Type": "string",
+                    "IssueCity": "string",
+                    "IssueCountry": "string",
+                    "PlaceOfBirth": "string",
+                    "ExpiryDate": "2021-04-13T21:42:56.495Z",
+                    "IssueDate": "2021-04-13T21:42:56.495Z",
+                    "IsPrimary": true,
+                    "LastChangedBySystem": "string",
+                    "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+                    "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+                  }
+                ],
+                "GlobalStay": {
+                  "CurrencyCode": "string",
+                  "LastStayDate": "2021-04-13T21:42:56.495Z",
+                  "NumberOfNights": 0,
+                  "NumberOfStays": 0,
+                  "StayTotalRevenue": 0,
+                  "LastStayUnit": "string",
+                  "LastStayHotelCode": "string",
+                  "HotelDiversity": 0
+                },
+                "LastChangedBySystem": "string",
+                "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+                "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+              }
+            }
+          ],
+          "ExternalReferences": [
+            {
+              "Code": "string",
+              "TypeCode": "string",
+              "SystemCode": "string"
+            }
+          ]
+        }
+      ],
+      "Agency": {
+        "Id": 0,
+        "Name": "string",
+        "EmailAddress": "string",
+        "Comments": "string",
+        "VatNumber": "string",
+        "HotelCode": "string",
+        "Fax": "string",
+        "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+        "LastUpdateDateTime": "2021-04-13T21:42:56.495Z",
+        "Addresses": [
+          {
+            "Id": 0,
+            "City": "string",
+            "HouseNumber": "string",
+            "State": "string",
+            "Street": "string",
+            "ZipCode": "string",
+            "CountryCode": "string",
+            "LanguageCode": "string",
+            "Source": "string",
+            "Type": "Undefined",
+            "IsPrimary": true,
+            "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+          }
+        ],
+        "PhoneNumbers": [
+          {
+            "Id": 0,
+            "CountryAccessCode": "string",
+            "Number": "string",
+            "IsPrimary": true,
+            "Source": "string",
+            "Type": "Unknown",
+            "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+          }
+        ],
+        "ExternalReferences": [
+          {
+            "Code": "string",
+            "TypeCode": "string",
+            "SystemCode": "string"
+          }
+        ],
+        "Attribues": [
+          {
+            "Id": 0,
+            "Code": "string",
+            "Value": "string",
+            "TypeCode": "string",
+            "StartDateTime": "2021-04-13T21:42:56.495Z",
+            "EndDateTime": "2021-04-13T21:42:56.495Z",
+            "CreateDateTime": "2021-04-13T21:42:56.495Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+          }
+        ]
+      },
+      "Company": {
+        "Id": 0,
+        "Name": "string",
+        "EmailAddress": "string",
+        "Comments": "string",
+        "VatNumber": "string",
+        "HotelCode": "string",
+        "Fax": "string",
+        "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+        "LastUpdateDateTime": "2021-04-13T21:42:56.495Z",
+        "Addresses": [
+          {
+            "Id": 0,
+            "City": "string",
+            "HouseNumber": "string",
+            "State": "string",
+            "Street": "string",
+            "ZipCode": "string",
+            "CountryCode": "string",
+            "LanguageCode": "string",
+            "Source": "string",
+            "Type": "Undefined",
+            "IsPrimary": true,
+            "CreatedDateTime": "2021-04-13T21:42:56.495Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.495Z"
+          }
+        ],
+        "PhoneNumbers": [
+          {
+            "Id": 0,
+            "CountryAccessCode": "string",
+            "Number": "string",
+            "IsPrimary": true,
+            "Source": "string",
+            "Type": "Unknown",
+            "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.496Z"
+          }
+        ],
+        "ExternalReferences": [
+          {
+            "Code": "string",
+            "TypeCode": "string",
+            "SystemCode": "string"
+          }
+        ],
+        "Attribues": [
+          {
+            "Id": 0,
+            "Code": "string",
+            "Value": "string",
+            "TypeCode": "string",
+            "StartDateTime": "2021-04-13T21:42:56.496Z",
+            "EndDateTime": "2021-04-13T21:42:56.496Z",
+            "CreateDateTime": "2021-04-13T21:42:56.496Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.496Z"
+          }
+        ]
+      },
+      "SourceCompany": {
+        "Id": 0,
+        "Name": "string",
+        "EmailAddress": "string",
+        "Comments": "string",
+        "VatNumber": "string",
+        "HotelCode": "string",
+        "Fax": "string",
+        "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+        "LastUpdateDateTime": "2021-04-13T21:42:56.496Z",
+        "Addresses": [
+          {
+            "Id": 0,
+            "City": "string",
+            "HouseNumber": "string",
+            "State": "string",
+            "Street": "string",
+            "ZipCode": "string",
+            "CountryCode": "string",
+            "LanguageCode": "string",
+            "Source": "string",
+            "Type": "Undefined",
+            "IsPrimary": true,
+            "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.496Z"
+          }
+        ],
+        "PhoneNumbers": [
+          {
+            "Id": 0,
+            "CountryAccessCode": "string",
+            "Number": "string",
+            "IsPrimary": true,
+            "Source": "string",
+            "Type": "Unknown",
+            "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.496Z"
+          }
+        ],
+        "ExternalReferences": [
+          {
+            "Code": "string",
+            "TypeCode": "string",
+            "SystemCode": "string"
+          }
+        ],
+        "Attribues": [
+          {
+            "Id": 0,
+            "Code": "string",
+            "Value": "string",
+            "TypeCode": "string",
+            "StartDateTime": "2021-04-13T21:42:56.496Z",
+            "EndDateTime": "2021-04-13T21:42:56.496Z",
+            "CreateDateTime": "2021-04-13T21:42:56.496Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.496Z"
+          }
+        ]
+      },
+      "ExtraServices": [
+        {
+          "Id": 0,
+          "Code": "string",
+          "Name": "string",
+          "CurrencyCode": "string",
+          "GroupTypeCode": "string",
+          "Breakdown": [
+            {
+              "Date": "2021-04-13T21:42:56.496Z",
+              "ExcludedTaxAmount": 0,
+              "IncludedTaxAmount": 0,
+              "TaxAmount": 0,
+              "Amount": 0,
+              "RateMode": "PerItem",
+              "Quantity": 0
+            }
+          ],
+          "TaxIncluded": true,
+          "TotalPrice": 0,
+          "TotalTaxAmount": 0,
+          "RateMode": "PerItem",
+          "Frequency": "None",
+          "Quantity": 0
+        }
+      ],
+      "Preferences": [
+        {
+          "Id": 0,
+          "PersonId": 0,
+          "ReservationId": 0,
+          "Code": "string",
+          "Value": "string",
+          "TypeCode": "string",
+          "Source": "string",
+          "HotelCode": "string",
+          "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+          "LastUpdateDateTime": "2021-04-13T21:42:56.496Z"
+        }
+      ],
+      "ExternalReferences": [
+        {
+          "Code": "string",
+          "TypeCode": "string",
+          "SystemCode": "string"
+        }
+      ],
+      "OtherLinkedPersons": [
+        {
+          "Id": 0,
+          "RelationType": "Booker",
+          "RelationTypeCode": "Booker",
+          "ExternalSystemCode": "string",
+          "Person": {
+            "Id": 0,
+            "Title": "string",
+            "Names": [
+              {
+                "Title": "string",
+                "FirstName": "string",
+                "LastName": "string",
+                "Primary": true
+              }
+            ],
+            "EmailAddresses": [
+              {
+                "Id": 0,
+                "Type": "Undefined",
+                "Value": "string",
+                "Verified": true,
+                "Source": "string",
+                "IsPrimary": true,
+                "CreatedDateTime": "2021-04-13T21:42:56.496Z"
+              }
+            ],
+            "LanguageCode": "string",
+            "CountryCode": "string",
+            "Gender": "Unknown",
+            "DateOfBirth": "2021-04-13T21:42:56.496Z",
+            "HotelCode": "string",
+            "Source": "string",
+            "JobTitle": "string",
+            "IsMember": true,
+            "NewsletterSubscription": true,
+            "Company": {
+              "Id": 0,
+              "Name": "string",
+              "EmailAddress": "string",
+              "Comments": "string",
+              "VatNumber": "string",
+              "HotelCode": "string",
+              "Fax": "string",
+              "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+              "LastUpdateDateTime": "2021-04-13T21:42:56.496Z",
+              "Addresses": [
+                {
+                  "Id": 0,
+                  "City": "string",
+                  "HouseNumber": "string",
+                  "State": "string",
+                  "Street": "string",
+                  "ZipCode": "string",
+                  "CountryCode": "string",
+                  "LanguageCode": "string",
+                  "Source": "string",
+                  "Type": "Undefined",
+                  "IsPrimary": true,
+                  "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+                  "LastUpdateDateTime": "2021-04-13T21:42:56.496Z"
+                }
+              ],
+              "PhoneNumbers": [
+                {
+                  "Id": 0,
+                  "CountryAccessCode": "string",
+                  "Number": "string",
+                  "IsPrimary": true,
+                  "Source": "string",
+                  "Type": "Unknown",
+                  "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+                  "LastUpdateDateTime": "2021-04-13T21:42:56.496Z"
+                }
+              ],
+              "ExternalReferences": [
+                {
+                  "Code": "string",
+                  "TypeCode": "string",
+                  "SystemCode": "string"
+                }
+              ],
+              "Attribues": [
+                {
+                  "Id": 0,
+                  "Code": "string",
+                  "Value": "string",
+                  "TypeCode": "string",
+                  "StartDateTime": "2021-04-13T21:42:56.496Z",
+                  "EndDateTime": "2021-04-13T21:42:56.496Z",
+                  "CreateDateTime": "2021-04-13T21:42:56.496Z",
+                  "LastUpdateDateTime": "2021-04-13T21:42:56.496Z"
+                }
+              ]
+            },
+            "CompanyName": "string",
+            "ExternalReferences": [
+              {
+                "Code": "string",
+                "TypeCode": "string",
+                "SystemCode": "string"
+              }
+            ],
+            "Attributes": [
+              {
+                "Id": 0,
+                "Code": "string",
+                "Value": "string",
+                "TypeCode": "string",
+                "HotelCode": "string",
+                "StartDate": "2021-04-13T21:42:56.496Z",
+                "EndDate": "2021-04-13T21:42:56.496Z"
+              }
+            ],
+            "Addresses": [
+              {
+                "Id": 0,
+                "City": "string",
+                "HouseNumber": "string",
+                "State": "string",
+                "Street": "string",
+                "ZipCode": "string",
+                "CountryCode": "string",
+                "LanguageCode": "string",
+                "Source": "string",
+                "Type": "Undefined",
+                "IsPrimary": true,
+                "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+                "LastUpdateDateTime": "2021-04-13T21:42:56.496Z"
+              }
+            ],
+            "PhoneNumbers": [
+              {
+                "Id": 0,
+                "CountryAccessCode": "string",
+                "Number": "string",
+                "IsPrimary": true,
+                "Source": "string",
+                "Type": "Unknown",
+                "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+                "LastUpdateDateTime": "2021-04-13T21:42:56.496Z"
+              }
+            ],
+            "DataConsents": [
+              {
+                "Id": 0,
+                "Message": "string",
+                "Source": "string",
+                "SubSource": "string",
+                "Given": true,
+                "Type": "Unknown",
+                "ValidUntil": "2021-04-13T21:42:56.496Z",
+                "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+                "LastUpdatedDateTime": "2021-04-13T21:42:56.496Z"
+              }
+            ],
+            "PaymentMethods": [
+              {
+                "Id": 0,
+                "TypeCode": "string",
+                "Code": "string",
+                "Name": "string",
+                "Value": "string",
+                "SubTypeCode": "string",
+                "PaymentIntegrationCode": "string",
+                "PaymentIntegrationMerchantCode": "string",
+                "ExpiryDate": "2021-04-13T21:42:56.496Z"
+              }
+            ],
+            "Preferences": [
+              {
+                "Id": 0,
+                "PersonId": 0,
+                "ReservationId": 0,
+                "Code": "string",
+                "Value": "string",
+                "TypeCode": "string",
+                "Source": "string",
+                "HotelCode": "string",
+                "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+                "LastUpdateDateTime": "2021-04-13T21:42:56.496Z"
+              }
+            ],
+            "LoyaltyLevels": [
+              {
+                "Id": 0,
+                "LevelCode": "string",
+                "Type": "Unknown",
+                "Rank": 0,
+                "ValidFrom": "2021-04-13T21:42:56.496Z",
+                "ValidUntil": "2021-04-13T21:42:56.496Z",
+                "Source": "string",
+                "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+                "LastUpdateDateTime": "2021-04-13T21:42:56.496Z"
+              }
+            ],
+            "StaySummaries": [
+              {
+                "Id": 0,
+                "CurrencyCode": "string",
+                "HotelCode": "string",
+                "LastStayDate": "2021-04-13T21:42:56.496Z",
+                "NumberOfNights": 0,
+                "NumberOfStays": 0,
+                "StayTotalRevenue": 0,
+                "StayTotalRevenueEnterprise": 0,
+                "LastStayUnit": "string",
+                "LastStayRevenue": 0,
+                "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+                "LastUpdateDateTime": "2021-04-13T21:42:56.496Z"
+              }
+            ],
+            "Documents": [
+              {
+                "Id": 0,
+                "PersonId": 0,
+                "HotelCode": "string",
+                "Source": "string",
+                "Number": "string",
+                "Nationality": "string",
+                "Type": "string",
+                "IssueCity": "string",
+                "IssueCountry": "string",
+                "PlaceOfBirth": "string",
+                "ExpiryDate": "2021-04-13T21:42:56.496Z",
+                "IssueDate": "2021-04-13T21:42:56.496Z",
+                "IsPrimary": true,
+                "LastChangedBySystem": "string",
+                "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+                "LastUpdateDateTime": "2021-04-13T21:42:56.496Z"
+              }
+            ],
+            "GlobalStay": {
+              "CurrencyCode": "string",
+              "LastStayDate": "2021-04-13T21:42:56.496Z",
+              "NumberOfNights": 0,
+              "NumberOfStays": 0,
+              "StayTotalRevenue": 0,
+              "LastStayUnit": "string",
+              "LastStayHotelCode": "string",
+              "HotelDiversity": 0
+            },
+            "LastChangedBySystem": "string",
+            "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+            "LastUpdateDateTime": "2021-04-13T21:42:56.496Z"
+          }
+        }
+      ],
+      "Contacts": [
+        {
+          "Id": 0,
+          "Title": "string",
+          "FirstName": "string",
+          "LastName": "string",
+          "EmailAddress": "string",
+          "PhoneNumber": "string",
+          "CompanyName": "string",
+          "Type": "Primary",
+          "Street": "string",
+          "HouseNumber": "string",
+          "City": "string",
+          "State": "string",
+          "ZipCode": "string",
+          "CountryCode": "string",
+          "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+          "LastChangedDateTime": "2021-04-13T21:42:56.496Z"
+        }
+      ],
+      "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+      "LastChangedDateTime": "2021-04-13T21:42:56.496Z",
+      "BookingDateTime": "2021-04-13T21:42:56.496Z",
+      "CancellationDateTime": "2021-04-13T21:42:56.496Z",
+      "PaymentInformations": [
+        {
+          "Amount": 0,
+          "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+          "CurrencyCode": "string",
+          "RequestedCurrencyCode": "string",
+          "AmountInRequestedCurrencyCode": 0,
+          "DueAmount": 0,
+          "Messages": "string",
+          "Method": "string",
+          "Type": "string",
+          "PaymentToken": "string",
+          "PspPaymentReference": "string",
+          "ShopperReference": "string",
+          "MerchantReference": "string",
+          "ShopperEmailAddress": "string",
+          "PaymentSource": "string",
+          "CardExpMonth": 0,
+          "CardExpYear": 0,
+          "CardDigits": "string",
+          "CardScheme": "string",
+          "OverrodeByMerchantReference": "string",
+          "TransactionCode": "string"
+        }
+      ],
+      "PaymentMethods": [
+        {
+          "Id": 0,
+          "TypeCode": "string",
+          "Code": "string",
+          "Name": "string",
+          "Value": "string",
+          "SubTypeCode": "string",
+          "PaymentIntegrationCode": "string",
+          "PaymentIntegrationMerchantCode": "string",
+          "ExpiryDate": "2021-04-13T21:42:56.496Z"
+        }
+      ],
+      "Attributes": [
+        {
+          "Id": 0,
+          "Code": "string",
+          "Value": "string",
+          "TypeCode": "string",
+          "StartDate": "2021-04-13T21:42:56.496Z",
+          "EndDate": "2021-04-13T21:42:56.496Z",
+          "CreatedDateTime": "2021-04-13T21:42:56.496Z",
+          "LastUpdateDateTime": "2021-04-13T21:42:56.496Z"
+        }
+      ],
+      "SharerReservationId": 0
+    }
+  ],
+  "Success": true,
+  "Errors": [
+    {
+      "Code": "string",
+      "Message": "string"
+    }
+  ],
+  "Warnings": [
+    {
+      "Code": "string",
+      "Message": "string"
+    }
+  ]
+}
