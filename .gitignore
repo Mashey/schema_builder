@@ -9,3 +9,4 @@ schema_builder.egg-info
 json_schemas/
 dist
 procedure_table.txt
+.python-version
