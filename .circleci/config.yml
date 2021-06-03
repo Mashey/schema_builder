@@ -1,7 +1,9 @@
 version: 2.1
 jobs:
   build:
-    executor: python/default
+    executor:
+      name: python/default
+      tag: "3.9"
     parallelism: 5
     steps:
       - checkout
