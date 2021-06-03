@@ -501,8 +501,8 @@ multidict = ">=4.0"
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.8"
-content-hash = "04f80a2a31f73dd9aa15ce2942d60ea97bfae30490beee9196f0690a4c102240"
+python-versions = "^3.9"
+content-hash = "5667d1fee2099c3ba531e1f77b9a55272f500a772dcd67346e22297cc3bc96aa"
 
 [metadata.files]
 appdirs = [

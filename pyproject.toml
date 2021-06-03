@@ -9,7 +9,7 @@ authors = [
 
 [tool.poetry.dependencies]
 click = "^8.0.1"
-python = "^3.8"
+python = "^3.9"
 python-fire = "^0.1.0"
 requests = "^2.25.1"
 rich = "^10.2.2"
