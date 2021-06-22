@@ -10,3 +10,4 @@ json_schemas/
 dist
 poetry.lock
 procedure_table.txt
+.python-version
