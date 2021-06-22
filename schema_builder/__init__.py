@@ -69,6 +69,10 @@ def find_data_type(data):
         return {"type": ["string", "null"]}
     elif 'timestamp' in lowercase_data:
         return {"type": ["string", "null"]}
+    elif 'offset_date_time' in lowercase_data:
+        return {"type": ["string", "null"]}
+    elif 'date' in lowercase_data:
+        return {"type": ["string", "null"]}
 
 
 def create_json_schema_dict(data):

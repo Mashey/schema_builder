@@ -36,7 +36,7 @@ def remove_new_lines(data):
 
 
 def set_schema_name(data):
-    table_name = data[0].split('brightview_prod.')[1]
+    table_name = data[0].split('.')[1]
     table = [table_name, data[1:]]
 
     return table
