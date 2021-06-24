@@ -97,12 +97,12 @@ def test_create_json_schema_file():
     assert json_schema_file == "activity_schema.json created successfully."
 
 
-def test_schema_from_ddl():
-    json_schema_file = sb.schema_from_ddl("activity_table_ddl.txt")
+def test_schema_from_ddl_file():
+    json_schema_file = sb.schema_from_ddl_file("activity_table_ddl.txt")
 
     assert json_schema_file == "activity_schema.json created successfully."
 
-    json_schema_file = sb.schema_from_ddl(None)
+    json_schema_file = sb.schema_from_ddl_file(None)
 
     assert json_schema_file == "Please enter a valid file path."
 

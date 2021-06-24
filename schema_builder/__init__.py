@@ -7,13 +7,13 @@ from schema_builder.builder_table_list import parse_formatted_table
 
 def build_json_schema(source_type, file=None, data=None, table_name=None):
     if source_type == "ddl":
-        return schema_from_ddl(file)
+        return schema_from_ddl_file(file)
     if source_type == "table":
         return schema_from_table(data, table_name)
     return "Please enter a valid source type [ddl, table]."
 
 
-def schema_from_ddl(file):
+def schema_from_ddl_file(file):
     if file is None:
         return "Please enter a valid file path."
 
