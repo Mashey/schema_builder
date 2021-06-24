@@ -1,6 +1,10 @@
-from schema_builder.builder_ddl import *
-import pytest
-import pytest_cov
+from schema_builder.builder_ddl import (
+    open_ddl_file,
+    remove_unnecessary_items,
+    remove_new_lines,
+    set_schema_name,
+    clean_data,
+)
 
 
 def test_open_ddl_file():
@@ -23,13 +27,13 @@ def test_open_ddl_file():
 def test_remove_unnecessary_items():
     table_data = open_ddl_file("activity_table_ddl.txt")
 
-    clean_data = remove_unnecessary_items(table_data)
+    cleaned_data = remove_unnecessary_items(table_data)
 
-    assert "CREATE TABLE Hive.brightview_prod.activity (\n" in clean_data[0]
-    assert "\tactivity_id BIGINT,\n" in clean_data[1]
-    assert "\tcode VARCHAR(10),\n" in clean_data[2]
-    assert "\tdescription VARCHAR(60),\n" in clean_data[3]
-    assert "\tlast_operation_time TIMESTAMP\n" in clean_data[-1]
+    assert "CREATE TABLE Hive.brightview_prod.activity (\n" in cleaned_data[0]
+    assert "\tactivity_id BIGINT,\n" in cleaned_data[1]
+    assert "\tcode VARCHAR(10),\n" in cleaned_data[2]
+    assert "\tdescription VARCHAR(60),\n" in cleaned_data[3]
+    assert "\tlast_operation_time TIMESTAMP\n" in cleaned_data[-1]
 
 
 def test_remove_new_lines():

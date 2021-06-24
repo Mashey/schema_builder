@@ -8,14 +8,13 @@ from schema_builder.builder_table_list import parse_formatted_table
 def build_json_schema(source_type, file=None, data=None, table_name=None):
     if source_type == "ddl":
         return schema_from_ddl(file)
-    elif source_type == "table":
+    if source_type == "table":
         return schema_from_table(data, table_name)
-    else:
-        return "Please enter a valid source type [ddl, table]."
+    return "Please enter a valid source type [ddl, table]."
 
 
 def schema_from_ddl(file):
-    if file == None:
+    if file is None:
         return "Please enter a valid file path."
 
     raw_table_data = open_ddl_file(file)
@@ -28,10 +27,10 @@ def schema_from_ddl(file):
 
 
 def schema_from_table(data, table_name):
-    if data == None:
+    if data is None:
         return "Please provide data from a SQL DESCRIBE FORMATTED query."
 
-    if table_name == None:
+    if table_name is None:
         return "Please provide a table name."
 
     clean_table_data = parse_formatted_table(data, table_name)
@@ -50,29 +49,48 @@ def create_table_dict(data):
     table_columns = data[1]
 
     for row in table_columns:
-        data_type = find_data_type(row[1])
-        table_dict[row[0]] = data_type
+        data_type = find_ddl_data_type(row[1])
+        json_schema_type = set_data_type(data_type)
+        table_dict[row[0]] = json_schema_type
 
     return table_dict
 
 
-def find_data_type(data):
+def find_ddl_data_type(data) -> str:
     lowercase_data = data.lower()
+    data_type = ""
 
     if "int" in lowercase_data:
-        return {"type": ["integer", "null"]}
+        data_type = "int"
     elif "bigint" in lowercase_data:
-        return {"type": ["integer", "null"]}
+        data_type = "int"
     elif "decimal" in lowercase_data:
-        return {"type": ["number", "null"]}
+        data_type = "float"
     elif "varchar" in lowercase_data:
-        return {"type": ["string", "null"]}
+        data_type = "string"
     elif "char" in lowercase_data:
-        return {"type": ["string", "null"]}
+        data_type = "string"
     elif "string" in lowercase_data:
-        return {"type": ["string", "null"]}
+        data_type = "string"
     elif "timestamp" in lowercase_data:
-        return {"type": ["string", "null"]}
+        data_type = "string"
+
+    return data_type
+
+
+def set_data_type(data_type: str) -> object:
+    types = {
+        "int": {"type": ["integer", "null"]},
+        "float": {"type": ["number", "null"]},
+        "string": {"type": ["string", "null"]},
+        "dict": {"type": "object", "properties": {}},
+        "array": {"type": "array"},
+        "bool": {"type": "boolean"},
+        "none": {"type": "null"},
+    }
+    current_type = types[data_type]
+
+    return current_type
 
 
 def find_json_data_type():

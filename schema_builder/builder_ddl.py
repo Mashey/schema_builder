@@ -14,9 +14,8 @@ def clean_data(data):
 
 
 def remove_unnecessary_items(data):
-    clean_data = data[4:-1]
 
-    return clean_data
+    return data[4:-1]
 
 
 def remove_new_lines(data):
