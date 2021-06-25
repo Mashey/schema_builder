@@ -8,7 +8,8 @@ from schema_builder.schema_helpers import (
 
 
 class JsonSchemaBuilder:
-    def __init__(self) -> None:
+    def __init__(self, database_name) -> None:
+        self._database_name = database_name
         self._source_type = None
         self._file = None
         self._data = None
