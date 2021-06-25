@@ -16,19 +16,19 @@ class JsonSchemaBuilder:
         self._table_name = None
 
     def build_json_schema(self, source_type, file=None, data=None, table_name=None):
-        if source_type == "ddl":
+        if source_type == "ddl_file":
             self._source_type = source_type
             self._file = file
             self._table_name = table_name
             return self.schema_from_ddl_file()
 
-        if source_type == "table":
+        if source_type == "ddl_table":
             self._source_type = source_type
             self._data = data
             self._table_name = table_name
             return self.schema_from_table()
 
-        return "Please enter a valid source type [ddl, table]."
+        return "Please enter a valid source type [ddl_file, ddl_table]."
 
     def schema_from_ddl_file(self):
         if self._file is None:
