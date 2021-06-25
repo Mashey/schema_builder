@@ -65,7 +65,7 @@ def create_json_schema_file(data, table_name):
     try:
         os.mkdir(f"{path}/json_schemas")
     except FileExistsError:
-        logging.info("/json_schemas directory already exists.")
+        logging.warning("/json_schemas directory already exists.")
 
     with open(f"{path}/json_schemas/{table_name}_schema.json", "w") as schema:
         schema.write(json_schema)
