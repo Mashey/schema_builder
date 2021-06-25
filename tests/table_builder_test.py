@@ -1,4 +1,4 @@
-from schema_builder.builder_table_list import parse_formatted_table
+from schema_builder.ddl_table_helpers import parse_formatted_table
 
 
 def test_parse_formatted_table(ddl_data):

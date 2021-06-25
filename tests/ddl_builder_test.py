@@ -1,4 +1,4 @@
-from schema_builder.builder_ddl import (
+from schema_builder.ddl_file_helpers import (
     open_ddl_file,
     remove_unnecessary_items,
     remove_new_lines,

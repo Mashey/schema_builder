@@ -1,33 +1,34 @@
-import schema_builder as sb
-import schema_builder.builder_ddl as ddl
-from schema_builder.builder_table_list import parse_formatted_table
+from schema_builder import build_json_schema, schema_from_ddl_file, schema_from_table
+import schema_builder.ddl_file_helpers as ddl_helpers
+import schema_builder.schema_helpers as schema_helpers
+from schema_builder.ddl_table_helpers import parse_formatted_table
 
 
 def test_find_ddl_data_type_from_ddl():
-    table_data = ddl.open_ddl_file("activity_table_ddl.txt")
-    cleaned_ddl_data = ddl.clean_data(table_data)
+    table_data = ddl_helpers.open_ddl_file("activity_table_ddl.txt")
+    cleaned_ddl_data = ddl_helpers.clean_data(table_data)
     table_columns = cleaned_ddl_data[1]
 
-    assert sb.find_ddl_data_type(table_columns[0][1]) == "int"
-    assert sb.find_ddl_data_type(table_columns[1][1]) == "string"
-    assert sb.find_ddl_data_type(table_columns[3][1]) == "string"
-    assert sb.find_ddl_data_type(table_columns[25][1]) == "float"
+    assert schema_helpers.find_ddl_data_type(table_columns[0][1]) == "int"
+    assert schema_helpers.find_ddl_data_type(table_columns[1][1]) == "string"
+    assert schema_helpers.find_ddl_data_type(table_columns[3][1]) == "string"
+    assert schema_helpers.find_ddl_data_type(table_columns[25][1]) == "float"
 
 
 def test_find_ddl_data_type_from_formatted_table(ddl_data):
     cleaned_table_data = parse_formatted_table(ddl_data, "activity")
     table_columns = cleaned_table_data[1]
 
-    assert sb.find_ddl_data_type(table_columns[0][1]) == "int"
-    assert sb.find_ddl_data_type(table_columns[1][1]) == "string"
-    assert sb.find_ddl_data_type(table_columns[3][1]) == "string"
-    assert sb.find_ddl_data_type(table_columns[25][1]) == "float"
+    assert schema_helpers.find_ddl_data_type(table_columns[0][1]) == "int"
+    assert schema_helpers.find_ddl_data_type(table_columns[1][1]) == "string"
+    assert schema_helpers.find_ddl_data_type(table_columns[3][1]) == "string"
+    assert schema_helpers.find_ddl_data_type(table_columns[25][1]) == "float"
 
 
 def test_table_dict():
-    table_data = ddl.open_ddl_file("activity_table_ddl.txt")
-    cleaned_ddl_data = ddl.clean_data(table_data)
-    table_dict = sb.create_table_dict(cleaned_ddl_data)
+    table_data = ddl_helpers.open_ddl_file("activity_table_ddl.txt")
+    cleaned_ddl_data = ddl_helpers.clean_data(table_data)
+    table_dict = schema_helpers.create_table_dict(cleaned_ddl_data)
 
     assert table_dict["activity_group_dsc_id"] == {"type": ["integer", "null"]}
     assert table_dict["activity_id"] == {"type": ["integer", "null"]}
@@ -78,31 +79,33 @@ def test_table_dict():
 
 
 def test_create_json_schema_dict():
-    table_data = ddl.open_ddl_file("activity_table_ddl.txt")
-    cleaned_ddl_data = ddl.clean_data(table_data)
-    table_dict = sb.create_table_dict(cleaned_ddl_data)
-    json_schema_dict = sb.create_json_schema_dict(table_dict)
+    table_data = ddl_helpers.open_ddl_file("activity_table_ddl.txt")
+    cleaned_ddl_data = ddl_helpers.clean_data(table_data)
+    table_dict = schema_helpers.create_table_dict(cleaned_ddl_data)
+    json_schema_dict = schema_helpers.create_json_schema_dict(table_dict)
 
     assert json_schema_dict["type"] == ["object", "null"]
     assert json_schema_dict["properties"] == table_dict
 
 
 def test_create_json_schema_file():
-    table_data = ddl.open_ddl_file("activity_table_ddl.txt")
-    cleaned_ddl_data = ddl.clean_data(table_data)
-    table_dict = sb.create_table_dict(cleaned_ddl_data)
-    json_schema_dict = sb.create_json_schema_dict(table_dict)
-    json_schema_file = sb.create_json_schema_file(json_schema_dict, "activity")
+    table_data = ddl_helpers.open_ddl_file("activity_table_ddl.txt")
+    cleaned_ddl_data = ddl_helpers.clean_data(table_data)
+    table_dict = schema_helpers.create_table_dict(cleaned_ddl_data)
+    json_schema_dict = schema_helpers.create_json_schema_dict(table_dict)
+    json_schema_file = schema_helpers.create_json_schema_file(
+        json_schema_dict, "activity"
+    )
 
     assert json_schema_file == "activity_schema.json created successfully."
 
 
 def test_schema_from_ddl_file():
-    json_schema_file = sb.schema_from_ddl_file("activity_table_ddl.txt")
+    json_schema_file = schema_from_ddl_file("activity_table_ddl.txt")
 
     assert json_schema_file == "activity_schema.json created successfully."
 
-    json_schema_file = sb.schema_from_ddl_file(None)
+    json_schema_file = schema_from_ddl_file(None)
 
     assert json_schema_file == "Please enter a valid file path."
 
@@ -110,23 +113,23 @@ def test_schema_from_ddl_file():
 def test_schema_from_table(ddl_data):
     table_name = "activity"
 
-    json_schema_file = sb.schema_from_table(ddl_data, table_name)
+    json_schema_file = schema_from_table(ddl_data, table_name)
 
     assert json_schema_file == "activity_schema.json created successfully."
 
-    json_schema_file = sb.schema_from_table(None, table_name)
+    json_schema_file = schema_from_table(None, table_name)
 
     assert (
         json_schema_file == "Please provide data from a SQL DESCRIBE FORMATTED query."
     )
 
-    json_schema_file = sb.schema_from_table(ddl_data, None)
+    json_schema_file = schema_from_table(ddl_data, None)
 
     assert json_schema_file == "Please provide a table name."
 
 
 def test_build_json_schema_ddl():
-    json_schema_file = sb.build_json_schema("ddl", file="activity_table_ddl.txt")
+    json_schema_file = build_json_schema("ddl", file="activity_table_ddl.txt")
 
     assert json_schema_file == "activity_schema.json created successfully."
 
@@ -134,13 +137,11 @@ def test_build_json_schema_ddl():
 def test_build_json_schema_table(ddl_data):
     table_name = "activity"
 
-    json_schema_file = sb.build_json_schema(
-        "table", data=ddl_data, table_name=table_name
-    )
+    json_schema_file = build_json_schema("table", data=ddl_data, table_name=table_name)
 
     assert json_schema_file == "activity_schema.json created successfully."
 
-    json_schema_file = sb.build_json_schema(
+    json_schema_file = build_json_schema(
         "blahblah", data=ddl_data, table_name=table_name
     )
 
