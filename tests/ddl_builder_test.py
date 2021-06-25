@@ -57,7 +57,7 @@ def test_set_schema_name():
     clean_data1 = remove_unnecessary_items(table_data)
     clean_data2 = remove_new_lines(clean_data1)
 
-    clean_data3 = set_schema_name(clean_data2)
+    clean_data3 = set_schema_name(clean_data2, "brightview_prod")
 
     assert clean_data3[0] == "activity"
     assert isinstance(clean_data3[1], list)
@@ -71,7 +71,7 @@ def test_set_schema_name():
 
 def test_clean_data():
     table_data = open_ddl_file("activity_table_ddl.txt")
-    cleaned_data = clean_data(table_data)
+    cleaned_data = clean_data(table_data, "brightview_prod")
 
     assert cleaned_data[0] == "activity"
     assert isinstance(cleaned_data[1], list)

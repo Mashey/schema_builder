@@ -7,20 +7,25 @@ from schema_builder.schema_helpers import (
 )
 
 
-def build_json_schema(source_type, file=None, data=None, table_name=None):
+def build_json_schema(
+    source_type, file_name=None, data=None, database_name=None, table_name=None
+):
     if source_type == "ddl":
-        return schema_from_ddl_file(file)
+        return schema_from_ddl_file(file_name, database_name)
     if source_type == "table":
         return schema_from_table(data, table_name)
     return "Please enter a valid source type [ddl, table]."
 
 
-def schema_from_ddl_file(file):
-    if file is None:
+def schema_from_ddl_file(file_name: str, database_name: str):
+    if not isinstance(file_name, str):
         return "Please enter a valid file path."
 
-    raw_table_data = open_ddl_file(file)
-    clean_table_data = clean_data(raw_table_data)
+    if not isinstance(database_name, str):
+        return "Please enter a valid database name."
+
+    raw_table_data = open_ddl_file(file_name)
+    clean_table_data = clean_data(raw_table_data, database_name)
     table_name = clean_table_data[0]
     table_dict = create_table_dict(clean_table_data)
     json_schema_dict = create_json_schema_dict(table_dict)
@@ -28,11 +33,11 @@ def schema_from_ddl_file(file):
     return create_json_schema_file(json_schema_dict, table_name)
 
 
-def schema_from_table(data, table_name):
-    if data is None:
+def schema_from_table(data: list, table_name: str):
+    if not isinstance(data, list):
         return "Please provide data from a SQL DESCRIBE FORMATTED query."
 
-    if table_name is None:
+    if not isinstance(table_name, str):
         return "Please provide a table name."
 
     clean_table_data = parse_formatted_table(data, table_name)

@@ -5,10 +5,10 @@ def open_ddl_file(file):
         return table_data
 
 
-def clean_data(data):
+def clean_data(data, database_name):
     step1 = remove_unnecessary_items(data)
     step2 = remove_new_lines(step1)
-    table_schema = set_schema_name(step2)
+    table_schema = set_schema_name(step2, database_name)
 
     return table_schema
 
@@ -34,8 +34,8 @@ def remove_new_lines(data):
     return new_line_list
 
 
-def set_schema_name(data):
-    table_name = data[0].split("brightview_prod.")[1]
+def set_schema_name(data, database_name):
+    table_name = data[0].split(f"{database_name}.")[1]
     table = [table_name, data[1:]]
 
     return table

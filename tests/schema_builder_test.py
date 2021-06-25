@@ -6,7 +6,7 @@ from schema_builder.ddl_table_helpers import parse_formatted_table
 
 def test_find_ddl_data_type_from_ddl():
     table_data = ddl_helpers.open_ddl_file("activity_table_ddl.txt")
-    cleaned_ddl_data = ddl_helpers.clean_data(table_data)
+    cleaned_ddl_data = ddl_helpers.clean_data(table_data, "brightview_prod")
     table_columns = cleaned_ddl_data[1]
 
     assert schema_helpers.find_ddl_data_type(table_columns[0][1]) == "int"
@@ -27,7 +27,7 @@ def test_find_ddl_data_type_from_formatted_table(ddl_data):
 
 def test_table_dict():
     table_data = ddl_helpers.open_ddl_file("activity_table_ddl.txt")
-    cleaned_ddl_data = ddl_helpers.clean_data(table_data)
+    cleaned_ddl_data = ddl_helpers.clean_data(table_data, "brightview_prod")
     table_dict = schema_helpers.create_table_dict(cleaned_ddl_data)
 
     assert table_dict["activity_group_dsc_id"] == {"type": ["integer", "null"]}
@@ -80,7 +80,7 @@ def test_table_dict():
 
 def test_create_json_schema_dict():
     table_data = ddl_helpers.open_ddl_file("activity_table_ddl.txt")
-    cleaned_ddl_data = ddl_helpers.clean_data(table_data)
+    cleaned_ddl_data = ddl_helpers.clean_data(table_data, "brightview_prod")
     table_dict = schema_helpers.create_table_dict(cleaned_ddl_data)
     json_schema_dict = schema_helpers.create_json_schema_dict(table_dict)
 
@@ -90,7 +90,7 @@ def test_create_json_schema_dict():
 
 def test_create_json_schema_file():
     table_data = ddl_helpers.open_ddl_file("activity_table_ddl.txt")
-    cleaned_ddl_data = ddl_helpers.clean_data(table_data)
+    cleaned_ddl_data = ddl_helpers.clean_data(table_data, "brightview_prod")
     table_dict = schema_helpers.create_table_dict(cleaned_ddl_data)
     json_schema_dict = schema_helpers.create_json_schema_dict(table_dict)
     json_schema_file = schema_helpers.create_json_schema_file(
@@ -101,11 +101,11 @@ def test_create_json_schema_file():
 
 
 def test_schema_from_ddl_file():
-    json_schema_file = schema_from_ddl_file("activity_table_ddl.txt")
+    json_schema_file = schema_from_ddl_file("activity_table_ddl.txt", "brightview_prod")
 
     assert json_schema_file == "activity_schema.json created successfully."
 
-    json_schema_file = schema_from_ddl_file(None)
+    json_schema_file = schema_from_ddl_file(None, "brightview_prod")
 
     assert json_schema_file == "Please enter a valid file path."
 
@@ -129,7 +129,9 @@ def test_schema_from_table(ddl_data):
 
 
 def test_build_json_schema_ddl():
-    json_schema_file = build_json_schema("ddl", file="activity_table_ddl.txt")
+    json_schema_file = build_json_schema(
+        "ddl", file_name="activity_table_ddl.txt", database_name="brightview_prod"
+    )
 
     assert json_schema_file == "activity_schema.json created successfully."
 
