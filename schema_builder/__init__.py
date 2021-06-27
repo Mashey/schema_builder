@@ -45,3 +45,7 @@ def schema_from_table(data: list, table_name: str):
     json_schema_dict = create_json_schema_dict(table_dict)
 
     return create_json_schema_file(json_schema_dict, table_name)
+
+
+def schema_from_api():
+    pass
