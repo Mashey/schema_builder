@@ -14,7 +14,9 @@ def build_json_schema(
         return schema_from_ddl_file(file_name, database_name)
     if source_type == "table":
         return schema_from_table(data, table_name)
-    return "Please enter a valid source type [ddl, table]."
+    if source_type == "api":
+        return schema_from_api()
+    return "Please enter a valid source type [ddl, table, api]."
 
 
 def schema_from_ddl_file(file_name: str, database_name: str):
