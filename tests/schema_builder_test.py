@@ -28,7 +28,7 @@ def test_find_ddl_data_type_from_formatted_table(ddl_data):
 def test_table_dict():
     table_data = ddl_helpers.open_ddl_file("activity_table_ddl.txt")
     cleaned_ddl_data = ddl_helpers.clean_data(table_data, "brightview_prod")
-    table_dict = schema_helpers.create_table_dict(cleaned_ddl_data)
+    table_dict = schema_helpers.create_ddl_dict(cleaned_ddl_data)
 
     assert table_dict["activity_group_dsc_id"] == {"type": ["integer", "null"]}
     assert table_dict["activity_id"] == {"type": ["integer", "null"]}
@@ -81,7 +81,7 @@ def test_table_dict():
 def test_create_json_schema_dict():
     table_data = ddl_helpers.open_ddl_file("activity_table_ddl.txt")
     cleaned_ddl_data = ddl_helpers.clean_data(table_data, "brightview_prod")
-    table_dict = schema_helpers.create_table_dict(cleaned_ddl_data)
+    table_dict = schema_helpers.create_ddl_dict(cleaned_ddl_data)
     json_schema_dict = schema_helpers.create_json_schema_dict(table_dict)
 
     assert json_schema_dict["type"] == ["object", "null"]
@@ -91,7 +91,7 @@ def test_create_json_schema_dict():
 def test_create_json_schema_file():
     table_data = ddl_helpers.open_ddl_file("activity_table_ddl.txt")
     cleaned_ddl_data = ddl_helpers.clean_data(table_data, "brightview_prod")
-    table_dict = schema_helpers.create_table_dict(cleaned_ddl_data)
+    table_dict = schema_helpers.create_ddl_dict(cleaned_ddl_data)
     json_schema_dict = schema_helpers.create_json_schema_dict(table_dict)
     json_schema_file = schema_helpers.create_json_schema_file(
         json_schema_dict, "activity"
@@ -147,4 +147,4 @@ def test_build_json_schema_table(ddl_data):
         "blahblah", data=ddl_data, table_name=table_name
     )
 
-    assert json_schema_file == "Please enter a valid source type [ddl, table]."
+    assert json_schema_file == "Please enter a valid source type [ddl, table, api]."

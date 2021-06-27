@@ -3,7 +3,7 @@ import os
 import logging
 
 
-def create_table_dict(data):
+def create_ddl_dict(data):
     table_dict = {}
     table_columns = data[1]
 

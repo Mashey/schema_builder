@@ -3,7 +3,7 @@ import pytest
 
 
 @pytest.fixture
-def api_response():
+def api_response_data():
     with open("tests/data/nested_json.json") as response:
         data = json.load(response)
 

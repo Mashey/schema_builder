@@ -1,7 +1,7 @@
-from schema_builder.ddl_file_helpers import open_ddl_file, clean_data
 from schema_builder.ddl_table_helpers import parse_formatted_table
+from schema_builder.ddl_file_helpers import open_ddl_file, clean_data
 from schema_builder.schema_helpers import (
-    create_table_dict,
+    create_ddl_dict,
     create_json_schema_dict,
     create_json_schema_file,
 )
@@ -28,16 +28,16 @@ class JsonSchemaBuilder:
             self._table_name = table_name
             return self.schema_from_table()
 
-        return "Please enter a valid source type [ddl_file, ddl_table]."
+        return "Please enter a valid source type [ddl_file, ddl_table, api]."
 
     def schema_from_ddl_file(self):
         if self._file is None:
             return "Please enter a valid file path."
 
         raw_table_data = open_ddl_file(self._file)
-        clean_table_data = clean_data(raw_table_data)
+        clean_table_data = clean_data(raw_table_data, database_name=self._database_name)
         table_name = clean_table_data[0]
-        table_dict = create_table_dict(clean_table_data)
+        table_dict = create_ddl_dict(clean_table_data)
         json_schema_dict = create_json_schema_dict(table_dict)
 
         return create_json_schema_file(json_schema_dict, table_name)
@@ -50,7 +50,7 @@ class JsonSchemaBuilder:
             return "Please provide a table name."
 
         clean_table_data = parse_formatted_table(self._data, self._table_name)
-        table_dict = create_table_dict(clean_table_data)
+        table_dict = create_ddl_dict(clean_table_data)
         json_schema_dict = create_json_schema_dict(table_dict)
 
         return create_json_schema_file(json_schema_dict, self._table_name)

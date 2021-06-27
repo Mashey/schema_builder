@@ -1,4 +1,4 @@
-def test_schema_from_api(api_response):
+def test_schema_from_api(api_response_data):
 
-    assert isinstance(api_response, dict)
-    assert isinstance(api_response["Data"], list)
+    assert isinstance(api_response_data, dict)
+    assert isinstance(api_response_data["Data"], list)
