@@ -9,7 +9,7 @@ CREATE TABLE Hive.brightview_prod.activity (
 	begin_date TIMESTAMP,
 	end_date TIMESTAMP,
 	activity_type VARCHAR(1),
-	block_type_dsc_id BIGINT,
+	block_type_dsc_id VARCHAR(1),
 	billable VARCHAR(1),
 	overlap VARCHAR(1),
 	mark_future VARCHAR(1),
@@ -30,7 +30,7 @@ CREATE TABLE Hive.brightview_prod.activity (
 	req_refer_phy VARCHAR(1),
 	ndc_code_num DECIMAL(25,0),
 	tos VARCHAR(1),
-	nearest_unit INT,
+	nearest_unit DECIMAL(25, 0),
 	bonus_min INT,
 	core_service_code_dsc_id BIGINT,
 	modality_code_dsc_id BIGINT,
@@ -40,7 +40,7 @@ CREATE TABLE Hive.brightview_prod.activity (
 	darts_include_in_count VARCHAR(1),
 	is_video_counseling VARCHAR(1),
 	darts_activity_code VARCHAR(3),
-	axis VARCHAR(3),
+	axis BIGINT,
 	cpt_type VARCHAR(1),
 	transportation_yn VARCHAR(1),
 	ndc_code VARCHAR(25),
@@ -56,5 +56,5 @@ CREATE TABLE Hive.brightview_prod.activity (
 	last_commit_time TIMESTAMP,
 	last_operation VARCHAR(10),
 	last_operation_ingest TIMESTAMP,
-	last_operation_time TIMESTAMP
+	last_operation_time TIMESTMAP
 );

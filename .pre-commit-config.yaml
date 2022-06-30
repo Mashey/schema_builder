@@ -24,4 +24,3 @@ repos:
     rev: v2.8.3
     hooks:
     -   id: pylint
-        entry:  /Users/jww/Library/Caches/pypoetry/virtualenvs/schema-builder-DK3vGjMf-py3.9/bin/pylint

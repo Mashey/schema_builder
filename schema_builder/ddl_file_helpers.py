@@ -5,7 +5,7 @@ def open_ddl_file(file: str):
     try:
         with open(f"{file}") as table:
             table_data = table.readlines()
-            return table_data
+            return table
     except FileNotFoundError as error:
         logging.warning(error)
         return "File not found."

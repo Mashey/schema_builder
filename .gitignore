@@ -10,3 +10,4 @@ json_schemas/
 dist
 procedure_table.txt
 .python-version
+.venv

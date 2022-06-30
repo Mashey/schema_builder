@@ -32,7 +32,7 @@ def test_table_dict():
 
     assert table_dict["activity_group_dsc_id"] == {"type": ["integer", "null"]}
     assert table_dict["activity_id"] == {"type": ["integer", "null"]}
-    assert table_dict["activity_time_types_yn"] == {"type": ["string", "null"]}
+    assert table_dict["activity_time_types_yn"] == {"type": ['string', 'null']}
     assert table_dict["activity_type"] == {"type": ["string", "null"]}
     assert table_dict["axis"] == {"type": ["string", "null"]}
     assert table_dict["begin_date"] == {"type": ["string", "null"]}
